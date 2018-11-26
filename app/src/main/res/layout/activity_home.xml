@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="end|center">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/profileBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:background="@drawable/user_img"
+            android:visibility="visible"
+            fresco:roundAsCircle="true" />
+
+        <ImageView
+            android:id="@+id/shareButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/circle_back"
+            android:backgroundTint="@color/colorAccent"
+            android:src="@drawable/share" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/misReservesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:src="@drawable/confirm"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/view_horizontal_margin"
+                android:text="MIS RESERVAS OLU"
+                android:textAllCaps="true"
+                android:textColor="@color/textColor"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/misReservesLayout"
+        android:layout_marginLeft="@dimen/view_horizontal_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/onDemandLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/calender" />
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reservar_title"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/demand"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/onDemand"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/green_btn"
+                android:clickable="false"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="@string/enter"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:background="@color/textColor" />
+
+        <LinearLayout
+            android:id="@+id/walletDiscountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/menu_comprar_icon" />
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/comprar_plan"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/discount"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/wallet"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/green_btn"
+                android:clickable="false"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="@string/enter"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:background="@color/textColor" />
+
+        <LinearLayout
+            android:id="@+id/menuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:src="@drawable/resumen" />
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:text="Actividades"
+                android:textAllCaps="true"
+                android:textColor="@color/textColor"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/menu"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/green_btn"
+                android:clickable="false"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="@string/enter"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:background="@color/textColor" />
+
+        <LinearLayout
+            android:id="@+id/especialisisLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/menu_history_icon" />
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ver"
+                    android:textColor="@color/textColor"
+                    android:textSize="22sp" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Especialista"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/promo"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/green_btn"
+                android:clickable="false"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="@string/enter"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:background="@color/textColor" />
+
+        <LinearLayout
+            android:id="@+id/settingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center|start"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/menu_ajustes_icon" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="controlado por:"
+                    android:textColor="#D1D1D1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/placeToPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/place_to_pay" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:gravity="center|end"
+                android:orientation="vertical">
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/quienes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Quiénes somos?"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/ayuda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ayuda"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/termsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms_conditons"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/cerrarLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cerrar sesión"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

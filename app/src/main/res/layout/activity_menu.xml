@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:text="MI"
+            android:textAllCaps="true"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:text="PERFÍL"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/backButtonClick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:id="@+id/fName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:id="@+id/lName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_horizontal_margin"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleText"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/profileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/view_horizontal_margin"
+                android:layout_marginTop="5dp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/userImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/user_img"
+                    fresco:roundAsCircle="true" />
+
+                <ImageView
+                    android:id="@+id/editProfile"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignTop="@+id/userImage"
+                    android:layout_marginLeft="-15dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_toRightOf="@+id/userImage"
+                    android:src="@drawable/menu_edit_icon" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/editarText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/editProfile"
+                    android:text="Editar"
+                    android:textColor="@color/textColor" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/activityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="Actividades Preferidas"
+                    android:textColor="@color/textColor" />
+
+                <LinearLayout
+                    android:id="@+id/userCategoryLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activityTextView"
+                    android:layout_marginBottom="@dimen/view_horizontal_margin"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/categoryImage1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/addphoto"
+                            android:padding="10dp"
+                            android:tint="@color/colorWhite" />
+
+                        <CustomControl.AvenirNextCondensedMediumTextView
+                            android:id="@+id/categoryText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/categoryImage2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/addphoto"
+                            android:padding="10dp"
+                            android:tint="@color/colorWhite" />
+
+                        <CustomControl.AvenirNextCondensedMediumTextView
+                            android:id="@+id/categoryText2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/categoryImage3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/addphoto"
+                            android:padding="10dp"
+                            android:tint="@color/colorWhite" />
+
+                        <CustomControl.AvenirNextCondensedMediumTextView
+                            android:id="@+id/categoryText3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userCategoryLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/view_horizontal_margin">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/dollersign" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/view_horizontal_margin"
+                        android:orientation="vertical">
+
+                        <CustomControl.AvenirNextCondensedRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/view_horizontal_margin"
+                            android:text="Saldo Disponible"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/sub_detail_text_size" />
+
+
+                        <CustomControl.AvenirNextCondensedRegularTextView
+                            android:id="@+id/wallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/view_horizontal_margin"
+                            android:text="0"
+                            android:textColor="@color/textColor" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/profileLayout"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/devider" />
+
+                <RelativeLayout
+                    android:id="@+id/misLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/view_horizontal_margin"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/pilatesIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/pilatesPlusicon"
+                        android:src="@drawable/menu_mis_pagos" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:id="@+id/pilatesTextView"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/pilatesIcon"
+                        android:gravity="center_vertical"
+                        android:text="Pagos"
+                        android:textColor="@color/textColor"
+                        android:textSize="20sp" />
+
+                    <CustomControl.LatoBoldButton
+                        android:id="@+id/pagosReservarBtn"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@+id/pilatesTextView"
+                        android:background="@drawable/green_btn"
+                        android:gravity="start|center"
+                        android:paddingLeft="@dimen/view_horizontal_margin"
+                        android:text="Ver"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/devider" />
+
+                <RelativeLayout
+                    android:id="@+id/misReservesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/view_horizontal_margin"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/misReservesIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/pilatesPlusicon"
+                        android:src="@drawable/confirm" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:id="@+id/misReservesTextView"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/misReservesIcon"
+                        android:gravity="center_vertical"
+                        android:text="Mis Reservas OLU"
+                        android:textColor="@color/textColor"
+                        android:textSize="20sp" />
+
+                    <CustomControl.LatoBoldButton
+                        android:id="@+id/misReserverBtn"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@+id/misReservesTextView"
+                        android:background="@drawable/green_btn"
+                        android:gravity="start|center"
+                        android:paddingLeft="@dimen/view_horizontal_margin"
+                        android:text="Ver"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/devider" />
+
+                <RelativeLayout
+                    android:id="@+id/promoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
+
+
+                    <ImageView
+                        android:id="@+id/fisioterapiaIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/fisioterapiaPlusicon"
+                        android:src="@drawable/menu_promo_icon" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:id="@+id/fisioterapiaTextView"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/fisioterapiaIcon"
+                        android:gravity="center_vertical"
+                        android:text="@string/menu_promo"
+                        android:textColor="@color/textColor"
+                        android:textSize="20sp" />
+
+                    <CustomControl.LatoBoldButton
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@+id/fisioterapiaTextView"
+                        android:background="@drawable/green_btn"
+                        android:gravity="start|center"
+                        android:paddingLeft="@dimen/view_horizontal_margin"
+                        android:text="Ver"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:id="@+id/fisioterapiaDescriptionTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/fisioterapiaIcon"
+                        android:layout_below="@+id/fisioterapiaIcon"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/kickboxing"
+                        android:textColor="@color/textColor"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/promoCodeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000"
+        android:clickable="true"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/popup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/popup" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/crossBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal|top"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/cross"
+                        android:tint="@android:color/white" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/promo_code_title"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <CustomControl.AvenirNextCondensedRegularEditText
+                        android:id="@+id/promoCodeEditText"
+                        android:layout_width="160dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/textColor" />
+
+                    <Button
+                        android:id="@+id/submitBtn"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/passwordEditText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/green_btn"
+                        android:clickable="false"
+                        android:gravity="start|center"
+                        android:paddingLeft="10dp"
+                        android:text="Usar"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5
+">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

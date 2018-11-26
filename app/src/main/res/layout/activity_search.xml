@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <LinearLayout
+        android:id="@+id/imagesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/view_horizontal_margin">
+
+        <ImageView
+            android:id="@+id/locationClick"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:src="@drawable/location" />
+
+        <ImageView
+            android:id="@+id/filterBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/view_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@drawable/filter" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/view_horizontal_margin"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_toLeftOf="@+id/imagesLayout"
+        android:layout_toRightOf="@+id/backButtonClick"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="ESPECIALISTAS"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/de_instructores"
+            android:textColor="@color/textColor"
+            android:textSize="30sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/titleLayout"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_rounded_corner_grey">
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/search_icon" />
+
+
+        <CustomControl.AvenirNextCondensedRegularEditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/searchIcon"
+            android:background="@android:color/transparent"
+            android:hint="@string/busca_por_nombre"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:textColor="@color/textColor" />
+
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchLayout">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/trainerRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:scrollbars="none" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <CustomControl.AvenirNextCondensedBoldTextView
+        android:id="@+id/noDataFound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Lo sentimos, no tenemos personal de OLU bajo dicho parámetro "
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/back_btn" />
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/backButtonClick"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_marginRight="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_screen_title"
+            android:textColor="@color/textColor"
+            android:textSize="30sp" />
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/register_screen_title1"
+            android:textColor="@color/textColor"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleLayout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/lastNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/last_name"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/dobTextView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:gravity="center|start"
+                android:hint="Fecha de nacimiento"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/detail_text_size" />
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/genderTextView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:gravity="center|start"
+                android:hint="Género"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/detail_text_size" />
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/celularEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/celular"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+
+            <RelativeLayout
+                android:id="@+id/categoryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/categoryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:gravity="center|start"
+                    android:hint="Actividades"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:layout_toLeftOf="@+id/arrow"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/detail_text_size" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/arrow"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:rotation="270"
+                    android:src="@drawable/quantum_ic_keyboard_arrow_down_white_36"
+                    android:tint="@color/grey" />
+
+            </RelativeLayout>
+
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:background="@drawable/shape_rounded_corner_light_grey"
+                android:hint="Descripción"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:textColor="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/register_password"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/confirmPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="@string/enter"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/acceptCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:backgroundTint="@color/textColor"
+                    android:buttonTint="@color/textColor"
+                    android:checked="true" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/termsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/accept_terms_conditons"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/genderPopup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7F000000"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/view_horizontal_margin">
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:gravity="center"
+                android:text="seleccionar género"
+                android:textSize="@dimen/detail_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/male"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:gravity="center"
+                android:text="Hombre"
+                android:textSize="@dimen/sub_detail_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/women"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:gravity="center"
+                android:text="Mujer"
+                android:textSize="@dimen/sub_detail_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/notSpecified"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:gravity="center"
+                android:text="Sin especificar"
+                android:textSize="@dimen/sub_detail_text_size" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

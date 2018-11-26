@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/parentRow"
+    android:orientation="vertical">
+
+    <CustomControl.AvenirNextCondensedRegularTextView
+        android:id="@+id/catergoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/deleteCatergory"
+        android:gravity="center|start"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:textSize="@dimen/detail_text_size" />
+
+    <ImageView
+        android:id="@+id/deleteCatergory"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/view_horizontal_margin"
+        android:src="@android:drawable/ic_menu_delete"
+        android:tint="@color/textColor" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey" />
+
+</RelativeLayout>

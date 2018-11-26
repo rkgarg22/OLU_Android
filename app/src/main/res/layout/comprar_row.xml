@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_toLeftOf="@+id/messesTextView"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dollorSign"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/doller_black"
+                android:tint="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedMediumTextView
+                android:id="@+id/moneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@+id/dollorSign"
+                android:gravity="center"
+                android:text="300"
+                android:textColor="@color/textColor"
+                android:textSize="50sp" />
+
+            <CustomControl.AvenirNextCondensedMediumTextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text=".000"
+                android:textColor="@color/textColor"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <CustomControl.LatoBoldButton
+            android:id="@+id/messesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@color/colorAccent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/passwordEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/green_info_box"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        android:text="Ahorro del 5%"
+        android:orientation="horizontal"
+        >
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginRight="5dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:id="@+id/firstText"/>
+
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/endText"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:maxLines="1"
+        android:text="----------------------------------------------------------------------------------------------------------------------------------"
+        android:textColor="@color/textColor"
+        android:textSize="20sp" />
+</LinearLayout>

@@ -1,0 +1,119 @@
+<resources>
+    <string name="app_name">Olu</string>
+    <string name="ok">SI</string>
+
+    <string name="user_type1_text">ENTRENA</string>
+    <string name="user_type1_text2">Usuario</string>
+
+    <string name="user_type2_text">ENTRENADOR</string>
+    <string name="user_type2_text2">Prestador de servicios</string>
+
+    <string name="login_screen_title">INGRESO</string>
+    <string name="e_mail">E-mail</string>
+    <string name="enter">Ingresar</string>
+    <string name="password">Contraseña</string>
+    <!--<string name="facebook_app_id">239984380004801</string>-->
+    <string name="facebook_app_id">182033902682693</string>
+    <!--<string name="fb_login_protocol_scheme">fb239984380004801</string>-->
+    <string name="fb_login_protocol_scheme">fb182033902682693</string>
+
+    <string name="forgot_password">¿Olvidaste la Contraseña?</string>
+    <string name="no_account">¿No tienes una cuenta?</string>
+
+    <string name="register_with_faecbook">Crea una con\nFacebook</string>
+    <string name="register">Regístrate</string>
+
+    <string name="register_screen_title">REGISTRO</string>
+    <string name="register_screen_title1">OLU</string>
+
+    <string name="name">Nombre</string>
+    <string name="last_name">Apellido</string>
+    <string name="logoutText">¿Estas seguro que deseas cerrar sesion?</string>
+    <string name="email">E-mail</string>
+    <string name="celular">Celular</string>
+    <string name="register_password">Crea contraseña</string>
+    <string name="confirm_password">Confirma contraseña</string>
+
+    <string name="accept_terms_conditons">Acepto términos y condiciones</string>
+
+    <string name="on">ON</string>
+    <string name="demand">DEMAND</string>
+
+    <string name="wallet">WALLET</string>
+    <string name="discount">DISCOUNT</string>
+
+    <string name="menu">MENÚ</string>
+
+    <string name="promo">PROMO</string>
+    <string name="code">CODE</string>
+
+    <string name="categories">ACTIVIDADES</string>
+    <string name="kickboxing">Kickboxing</string>
+    <string name="stretching">Stretching</string>
+    <string name="EntrenamientoFuncional">Entrenamiento Funcional</string>
+    <string name="yoga">Yoga</string>
+    <string name="pilates">Pilates</string>
+    <string name="danza_fit">Dance Fit</string>
+    <string name="fisioterapia">Fisioterapia</string>
+
+    <string name="reservar_title">RESERVAR</string>
+
+    <string name="menu_category">Categorías</string>
+    <string name="reservar_session">Reservar Sesion</string>
+    <string name="comprar_plan">Comprar Plan</string>
+    <string name="history">Historial de Enterinamientos</string>
+    <string name="mis_pages">Mis pagos</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="menu_promo">Promo</string>
+
+    <string name="hora">Hora</string>
+    <string name="selecciona_la_hora">Seleccíona la hora</string>
+    <string name="no_of_person">Número de personas</string>
+
+    <string name="ubicacion_title">UBICACIÓN</string>
+    <string name="ubicacion_desc">Selecciona uno de los instructores más cerca a ti:</string>
+
+    <string name="list">LISTA</string>
+    <string name="map">MAPA</string>
+
+    <string name="ingresa">INGRESA</string>
+    <string name="otra_direccion">OTRA DIRECCIÓN</string>
+    <string name="direccion">Dirección</string>
+    <string name="barrio">Barrio</string>
+    <string name="comentarios">Comentarios:</string>
+
+    <string name="lista">LISTA</string>
+    <string name="dummyText">Lorem Ipsum es simplemente texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la revistió para hacer un libro tipo de espécimen.</string>
+    <string name="de_instructores">DE INSTRUCTORES</string>
+
+    <string name="kickboxing_description">Es un deporte que combina técnicas de boxeo y elementos de algunas artes marciales, de origen japonés y desarrollo occidental. Esta técnica ayuda a aumentar la fuerza, la definición muscular y mejora el desempeño cardiovascular.Se aprende una técnica de auto defensa efectiva que libera el estrés y eleva la autoestima.Es ideal para aquellas personas que quieran un deporte de alta liberación de energía y coordinación efectiva entre la mente y el cuerpo.</string>
+    <string name="functional_description">Es una disciplina de acondicionamiento físico basado en ejercicios y tecnicas variadas con movimientos funcionales ejecutados a alta intensidad según condición física del usuario. Se logra una combinación efectiva entre el fortalecimiento muscular y el trabajo cardiovascular. Es perfecto para quienes quieren lograr un mejor desempeño en otros deportes, tonificar los musculos y mejorar las condiciones físicas generales. </string>
+    <string name="strecting_description">Son ejercicios personalizados de estiramiento para llevar a cabo elongaciones de los diferentes músculos. Esto permite que se mantengan flexibles, liberar tensiones y mejorar los rangos de movimiento de las articulaciones, la coordinación y el equilibrio,según la necesidad del usuario. Es recomendado para quienes quieran mejorar su movilidad, equilibrio, fuerza y evitar lesiones.</string>
+    <string name="yoga_description">Es un conjunto de ejercicios y posturas basados en técnicas milenarias que buscan el equilibrio de la mente, el cuerpo y el espíritu. Por medio de una una adecuada respiración, ejercicios y meditación se logra encontrar el balance perfecto en cada sesion.  Sus beneficios principales son la liberación del estrés y la ansiedad, la tonificacion corporal, aumento en la flexibilidad. Ideal para quienes buscan un espacio para descansar la mente mientras se realiza una practica milenaria y la posibilidad de encontrar una armonia entre la mente y el cuerpo a traves de la respiración.</string>
+    <string name="pilates_description">Es una técnica que incorpora ejercicios que ayudan a mejorar la tonificación de los músculos (combinación de yoga y gimnasia) a través de una sucesión de movimientos fluidos. Ayuda a mejorar la concentración, la precisión, la respiración, el control y la fluidez.  Igualmente mejora la coordinación, el equilibrio, la agilidad, la flexibilidad y tonifica los músculos. Es una técnica recomendada para quienes quieran corregir posturas corporales, tonificar el cuerpo, reducir el estrés o desarrollar fuerza en alguna parte especifica del cuerpo luego de una lesión.</string>
+    <string name="dance_description">Es una clase diferente y ágil donde hay una combinación de baile y ejercicio aeróbico. Se mezclan géneros musicales con canciones de ritmo rápido y lento con el fin de quemar calorías de forma divertida. Esta técnica tonifica los musculos, mejora la flexibilidad y el equilibrio mientras se queman calorias bailando.  Es una opción ideal para las personas que quieren lograr metas de una manera diferente y agradable.</string>
+    <string name="mayor_description">Tiene como funcion especifica la introduccion de habitos y actitudes saludables del mundo de la gimnsasia para la tercera edad. Mejora la forma física de aquellos adultos que presentan algun problema muscular o locomotor. Les ayuda a activar la mente y el cuerpo de una manera segura y dirigida, para evitar lesiones o complicaciones. Es ideal para los adultos que quieran reducir sus niveles de stress y ansiedad y a la vez quieran mantener un estilo de vida saludable.</string>
+    <string name="fisio_descrition">Es una disciplina que a través de ejercicio terapéutico, masoterapia y electroterapia, tiene como objetivo facilitar el desarrollo, manutención y recuperación de la máxima funcionalidad y movilidad de la persona. Ideal para quienes buscan prevenir lesiones deportivas, o en caso de estar en una recuperación de alguna lesión tratada por un médico especialista. (Se recomienda una visita al médico especialista para indicaciones antes de empezar una sesión.)</string>
+    <string name="masajes_description">Es la técnica de masaje especificamente diseñada para los deportistas. Se realizan sesiones de acuerdo a los objetivos de cada persona, tales como acondicionar los musculos para el esfuerzo en algún deporte, prevenir lesiones en la fase de entrenamiento o de competencia y contribuir a la recuperación óptima de las diferentes áreas. Se recomienda para deportistas en momentos de estrés, para descansar los músculos luego de sesiones deportivas extenuantes o para preparar el cuerpo para algúna meta específica.</string>
+
+    <string name="startSeassion">¿Quieres comenzar esta sesión?</string>
+    <string name="accepted_title">¡Estamos  Listos!\nTu  OLU  ha  confirmado  la  reserva</string>
+    <string name="accepted_desc">"Ten en cuenta que solo hasta los 75 minutos previos al inicio del servicio podrás cancelar sin cobro. A partir de ese momento, si cancelas no se hará devolución del dinero"</string>
+
+    <string name="decline_title">¡Lo  sentimos!</string>
+    <string name="decline_desc">Tu  OLU  parece  no  estar  disponible.  Te  invitamos  a  seleccionar  otro  entrenador  que  se  acomode  a  tu  necesidad.</string>
+
+    <string name="wrong_booking_time">por favor ingresa una hora mayor a los próximos 15 minutos</string>
+    <string name="profile_update">Actualización de perfil con éxito</string>
+
+    <string name ="promo_code_title">Ingresa tu código de descuento</string>
+    <string name="payment_decuct_from_card">El saldo en tu plan es inferior al valor de la sesión. La diferencia será cargada a tu tarjeta de crédito.</string>
+    <string name="nunca">Solo hoy</string>
+    <string name="cadaDia">Cada dia</string>
+    <string name="todasLasSemanas">Todas las semanas</string>
+    <string name="cadaAno">Cada año</string>
+    <string name="pleaseSelectEndTime">Por favor seleccione Finaliza</string>
+    <string name="createdSuccessfully">Creado con éxito</string>
+    <string name="updateSuccessfully">actualizar correctamente</string>
+
+</resources>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/backButtonClick"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/iniciarBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/green_btn"
+                    android:gravity="center|start"
+                    android:paddingLeft="10dp"
+                    android:text="@string/iniciar"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/userImage"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/user_img"
+                            fresco:roundAsCircle="true" />
+
+                        <CustomControl.AvenirNextCondensedRegularTextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/categoryImage"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp" />
+
+                        <CustomControl.AvenirNextCondensedRegularTextView
+                            android:id="@+id/categoryName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/dotted_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/directionLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/mis_session_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/mis_session_icon" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dirección"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/phoneLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/phone"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/mobile2"
+                        android:tint="@color/grey" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:id="@+id/phoneText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Llamar"
+                        android:textAlignment="center"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/chatLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/chat"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/mobile1"
+                        android:tint="@color/grey" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Escribir"
+                        android:textAlignment="center"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/crossLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cross"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cross"
+                        android:tint="@color/grey" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Cancelar"
+                        android:textAlignment="center"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/dotted_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
+
+                    <CustomControl.AvenirNextCondensedMediumTextView
+                        android:id="@+id/dayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:textSize="25sp" />
+
+                    <CustomControl.AvenirNextCondensedMediumWithoutPaddingTextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dayTextView"
+                        android:layout_marginTop="15dp"
+                        android:gravity="top"
+                        android:textColor="@color/textColor"
+                        android:textSize="60sp" />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:layout_alignTop="@+id/date"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/date"
+                        android:background="@color/textColor" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:id="@+id/monthTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/line"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/line"
+                        android:inputType="textCapWords"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/timeLayout"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/line"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/date"
+                        android:background="@drawable/border_back"
+                        android:orientation="vertical"
+                        android:paddingLeft="5dp">
+
+                        <CustomControl.AvenirNextCondensedRegularTextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/textColor"
+                            android:textSize="15sp" />
+
+                        <CustomControl.AvenirNextCondensedRegularTextView
+                            android:id="@+id/endTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/time"
+                            android:text=""
+                            android:textColor="@color/textColor"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/finishBtn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="15dp"
+                android:text="Finalizar"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

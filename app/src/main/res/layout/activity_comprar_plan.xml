@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COMPRAR"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="PLAN"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/comprarRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/titleLayout"
+        android:scrollbars="none" />
+
+    <RelativeLayout
+        android:id="@+id/popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8c000000"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/popup" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="60dp">
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="¿Deseas programar una sesión?"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/yes"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="20dp"
+                android:text="Si"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/no"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="20dp"
+                android:text="No"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <CustomControl.AvenirNextCondensedBoldTextView
+        android:id="@+id/noDataFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No Data Found"
+        android:textColor="@color/textColor"
+        android:textSize="25sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

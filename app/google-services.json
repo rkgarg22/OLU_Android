@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "29152237899",
+    "firebase_url": "https://oluapp-da158.firebaseio.com",
+    "project_id": "oluapp-da158",
+    "storage_bucket": "oluapp-da158.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29152237899:android:cae76b50c6438422",
+        "android_client_info": {
+          "package_name": "com.elisa.olu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29152237899-r9me8515p8l34s3qrebi3ogr89hrom8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJzgzVy9iQENaHeUbqux7GPVR4nJuDB9s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

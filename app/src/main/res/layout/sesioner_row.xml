@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:id="@+id/parentRowAccepted"
+    android:orientation="horizontal">
+
+    <CustomControl.AvenirNextCondensedBoldTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05/01/18"
+        android:id="@+id/date"
+        android:textColor="@color/textColor"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:id="@+id/categoryImage"
+        android:src="@drawable/watch" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:id="@+id/categoryName"
+            android:textSize="16sp" />
+
+        <CustomControl.AvenirNextCondensedMediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/name"
+            android:textColor="@color/textColor"
+            android:textSize="15sp" />
+
+        <CustomControl.AvenirNextCondensedMediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:id="@+id/bookingTime"
+            android:textColor="@color/textColor"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</LinearLayout>

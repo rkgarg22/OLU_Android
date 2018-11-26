@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomControl.AvenirNextCondensedMediumTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/circle_grey"
+    android:layout_margin="7dp"
+    android:gravity="center"
+    android:textColor="@color/colorWhite"
+    android:textSize="@dimen/sub_detail_text_size"
+    android:padding="7dp"
+    android:id="@+id/categoryName"
+    android:orientation="vertical">
+
+</CustomControl.AvenirNextCondensedMediumTextView>

@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">Olu</string>
+
+    <string name="ok">SI</string>
+
+    <string name="user_type1_text">ENTRENA</string>
+    <string name="user_type1_text2">Usuario</string>
+
+    <string name="user_type2_text">ENTRENADOR</string>
+    <string name="user_type2_text2">Prestador de servicios</string>
+
+    <string name="login_screen_title">INGRESO</string>
+    <string name="e_mail">E-mail</string>
+    <string name="enter">Ingresar</string>
+    <string name="password">Contraseña</string>
+
+    <string name="forgot_password">¿Olvidaste la Contraseña?</string>
+    <string name="no_account">¿No tienes una cuenta?</string>
+
+    <string name="register_with_faecbook">Crea una con\nFacebook</string>
+    <string name="register">Regístrate</string>
+
+    <string name="register_screen_title">REGISTRO</string>
+    <string name="register_screen_title1">OLU</string>
+
+    <string name="name">Nombre</string>
+    <string name="last_name">Apellido</string>
+    <string name="email">E-mail</string>
+    <string name="celular">Celular</string>
+    <string name="register_password">Crea contraseña</string>
+    <string name="confirm_password">Confirma contraseña</string>
+
+    <string name="accept_terms_conditons">Acepto términos y condiciones</string>
+    <string name="terms_conditons">Términos y condiciones</string>
+
+    <string name="on">ON</string>
+    <string name="demand">DEMAND</string>
+
+    <string name="wallet">WALLET</string>
+    <string name="discount">DISCOUNT</string>
+
+    <string name="menu">MENÚ</string>
+
+    <string name="promo">PROMO</string>
+    <string name="code">CODE</string>
+
+    <string name="categories">ACTIVIDADES</string>
+    <string name="kickboxing">Kickboxing</string>
+    <string name="stretching">Stretching</string>
+    <string name="yoga">Yoga</string>
+    <string name="pilates">Pilates</string>
+    <string name="danza_fit">Danza Fit</string>
+    <string name="fisioterapia">Fisioterapia</string>
+
+    <string name="reservar_title">RESERVAR</string>
+
+    <string name="menu_category">Categorías</string>
+    <string name="reservar_session">Reservar Sesion</string>
+    <string name="comprar_plan">Comprar Plan</string>
+    <string name="history">Historial de Enterinamientos</string>
+    <string name="mis_pages">Mis pagos</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="menu_promo">Codigo Promocional</string>
+
+    <string name="hora">Hora</string>
+    <string name="selecciona_la_hora">Seleccíona la hora</string>
+    <string name="no_of_person">Número de personas</string>
+
+    <string name="ubicacion_title">UBICACIÓN</string>
+    <string name="ubicacion_desc">Selecciona uno de los instructores más cerca a ti:</string>
+
+    <string name="list">LISTA</string>
+    <string name="map">MAPA</string>
+
+    <string name="ingresa">INGRESA</string>
+    <string name="otra_direccion">OTRA DIRECCIÓN</string>
+    <string name="direccion">Dirección</string>
+    <string name="barrio">Barrio</string>
+    <string name="comentarios">Comentarios:</string>
+
+    <string name="lista">LISTA</string>
+    <string name="de_instructores">DE INSTRUCTORES</string>
+
+    <string name="busca_por_nombre">Busca por nombre</string>
+    <string name="dummyText">Lorem Ipsum es simplemente texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la revistió para hacer un libro tipo de espécimen.</string>
+    <string name="faq">FAQ</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="ver">Ver</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="Gimnasia">Gimnasia Adulto Mayor</string>
+    <string name="masajes">Masajes Deportivos</string>
+    <string name="emailEmptyError">El correo electrónico debe ser llenado ..</string>
+    <string name="emailValidError">Por favor introduzca un correo electrónico válido..</string>
+    <string name="passportEmptyError">La contraseña debe estar llena ..</string>
+    <string name="android">Android</string>
+    <string name="serverError">¡¡Error del Servidor!!</string>
+    <string name="network_error">Por favor revisa tu conexión de red.</string>
+    <string name="loginSuccess">Login Successfully</string>
+    <string name="nameEmptyError">El primer nombre debe ser llenado</string>
+    <string name="lNameEmptyError">El apellido debe ser llenado</string>
+    <string name="phoneEmptyError">El número de teléfono debe estar lleno</string>
+    <string name="passportValidError">La contraseña no coincide</string>
+    <string name="logoutText">¿Estas seguro que deseas cerrar sesion?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="registerSuccess">Registrarse con éxito</string>
+    <string name="individual">Individual</string>
+    <string name="group">Empresarial</string>
+    <string name="internal_storage">Internal Storage</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="inbox">Inbox</string>
+    <string name="write_mgs">Escribe aqui</string>
+    <string name="send">Enviar</string>
+    <!--<string name="facebook_app_id">239984380004801</string>-->
+    <string name="facebook_app_id">182033902682693</string>
+    <string name="fb_login_protocol_scheme">fb182033902682693</string>
+    <!--<string name="fb_login_protocol_scheme">fb239984380004801</string>-->
+    <string name="politicaText">Política de privacidad de datos</string>
+    <string name="accetJob">¿Estás  seguro que deseas confirmar la reserva?</string>
+    <string name="declineJob">¿Estas  seguro  que  deseas  cancelar?</string>
+    <string name="cancelJob">¿Estás seguro que deseas cancelar?</string>
+    <string name="no">No</string>
+    <string name="descriptionEmptyError">Por favor ingrese la descripción</string>
+    <string name="save">salvar</string>
+
+    <string name="startSeassionConfirmation">¿Quieres comenzar esta sesión?</string>
+    <string name="finishSeassionConfirmation">¿Quieres terminar la sesión?</string>
+
+    <string name="accepted_title">¡Estamos Listos!\nTu  OLU  ha  confirmado  la  reserva</string>
+    <string name="accepted_desc">"Ten en cuenta que solo hasta los 75 minutos previos al inicio del servicio podrás cancelar sin cobro. A partir de ese momento, si cancelas no se hará devolución del dinero"</string>
+
+    <string name="acceptec_desc_less2">Ten en cuenta que solo durante los próximos 15 minutos podrás cancelar sin cobro.  A partir de ese momento, si cancelas no se hará devolución del dinero</string>
+
+    <string name="decline_title">¡Lo sentimos!</string>
+    <string name="decline_desc">Tu OLU parece no estar disponible. Te invitamos a seleccionar otro entrenador que se acomode a tu necesidad.</string>
+
+    <string name="cancel_title">¡Lo sentimos!</string>
+    <string name="cancel_desc">El OLU que seleccionaste no puede realizar la actividad. Te invitamos a ver otros especialistasdisponibles según tu requerimiento.</string>
+
+
+    <string name="start_session">Se da INICIO a la ACTIVIDAD</string>
+    <string name="finish_session">FIN de la ACTIVIDAD</string>
+
+    <string name="wrong_booking_time">por favor ingresa una hora mayor a los próximos 15 minutos</string>
+    <string name="profile_update">Actualización de perfil con éxito</string>
+
+    <string name="payment_confirm_message">¿Estas seguro y confirmas que deseas comprar el plan seleccionado?</string>
+
+    <string name="promo_code_title">Ingresa tu código de descuento</string>
+    <string name="updateImageText">¿Seguro que quieres actualizar la imagen del perfil?</string>
+
+    <string name="ratingMessage">Gracias por hacer parte del equipo OLU.</string>
+    <string name="ratingMessageFromUserSide">Tu comentario ha sido enviando, muchas gracias por utilizar OLU. ¡Te esperamos pronto!</string>
+    <string name="reservar_payment_confirm">Serás re direcionado por unos instantes a la página de Placetopay donde podrás validar el método de pago y poder continuar con la reserva.</string>
+
+    <string name="profile_verificationmessage">Los cambios se verán reflejados en las próximas horas, una vez el adminstrador valide la información.</string>
+
+    <string name="payment_decuct_from_card">El saldo en tu plan es inferior al valor de la sesión. La diferencia será cargada a tu tarjeta de crédito.</string>
+    <string name="trainer_registration_verification">Muchas gracias por registrarte como especialista de OLU. En los próximos días te estaremos contactando para seguir el proceso de vinculación.</string>
+    <string name="nunca">Solo hoy</string>
+    <string name="cadaDia">Cada dia</string>
+    <string name="todasLasSemanas">Todas las semanas</string>
+    <string name="cadaMes">Cada mes</string>
+    <string name="cadaAno">Cada año</string>
+    <string name="pleaseEnterTitle">Por favor escribe Titulo</string>
+    <string name="pleaseSelectDate">Por favor seleccione Dia</string>
+    <string name="pleaseSelectStartTime">Por favor seleccione Inicio</string>
+    <string name="pleaseSelectEndTime">Por favor seleccione Finaliza</string>
+    <string name="createdSuccessfully">Creado con éxito</string>
+    <string name="updateSuccessfully">actualizar correctamente</string>
+    <string name="grupal">Grupal</string>
+
+    <string name="switch_card_confirmation">La tarjeta de crédito seleccionada quedará como tu medio de pago principal.</string>
+    <string name="card_deleted_successfully">Tarjeta eliminada exitosamente.</string>
+</resources>

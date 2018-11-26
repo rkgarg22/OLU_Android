@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/dateLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_above="@+id/messageLayout"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:visibility="gone">
+
+        <CustomControl.LatoBlackTextView
+            android:id="@+id/dateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/messageLayoutLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/view_height"
+            android:layout_marginTop="@dimen/view_horizontal_margin"
+            android:background="@drawable/chatbox"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/leftLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progressBarLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/attachmentLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:minWidth="150dp" />
+
+            </RelativeLayout>
+
+            <CustomControl.LatoSemiBoldTextView
+                android:id="@+id/messageLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center|left"
+                android:minLines="2"
+                android:minWidth="50dp"
+                android:text=""
+                android:textColor="@color/textColor" />
+
+        </LinearLayout>
+
+        <CustomControl.LatoSemiBoldTextView
+            android:id="@+id/messageLeftTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/messageLayoutLeft"
+            android:layout_marginBottom="@dimen/view_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="-10dp"
+            android:gravity="left|center"
+            android:minLines="2"
+            android:minWidth="50dp"
+            android:text="22:00"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/messageLayoutRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/view_height"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/view_horizontal_margin"
+            android:background="@drawable/chatbox_blue"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rightLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progressBarRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/attachmentRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:minWidth="150dp" />
+            </RelativeLayout>
+
+            <CustomControl.LatoSemiBoldTextView
+                android:id="@+id/messageRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="5dp"
+                android:gravity="center|right"
+                android:minLines="2"
+                android:minWidth="50dp"
+                android:text="John Martin"
+                android:textColor="@color/colorWhite"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <CustomControl.LatoSemiBoldTextView
+            android:id="@+id/messageRightTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/messageLayoutRight"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/view_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="-10dp"
+            android:gravity="center|right"
+            android:minLines="2"
+            android:minWidth="50dp"
+            android:text="22:00"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

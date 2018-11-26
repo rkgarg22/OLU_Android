@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <CustomControl.AvenirNextCondensedBoldTextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/categories"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/categoryRecyclerView"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/kickBoxing"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/plusicon"
+                    android:src="@drawable/kick_boxing" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/kickboxTextView"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/kickBoxing"
+                    android:gravity="center_vertical"
+                    android:text="@string/kickboxing"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/kickBoxReservarBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/kickboxTextView"
+                    android:background="@drawable/green_btn" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/kickboxDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/kickBoxing"
+                    android:layout_below="@+id/kickBoxing"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/kickboxing_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/plusicon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="11dp"
+                    android:src="@drawable/plus_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/cardioPlusicon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <ImageView
+                    android:id="@+id/cardioImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cardioPlusicon"
+                    android:src="@drawable/cardio_crossfit" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/cardioTextView"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/cardioImage"
+                    android:gravity="center_vertical"
+                    android:text="@string/EntrenamientoFuncional"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/functionalReservarBtn"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/cardioTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/cardioDescTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/cardioImage"
+                    android:layout_below="@+id/cardioImage"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/functional_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/stretchingPlusicon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <ImageView
+                    android:id="@+id/stretchingicon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/stretchingPlusicon"
+                    android:src="@drawable/stretching" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/stretchingTextView"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stretchingicon"
+                    android:gravity="center_vertical"
+                    android:text="@string/stretching"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/stretchingReservarBtn"
+                    android:layout_toRightOf="@+id/stretchingTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/stretchingDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/stretchingicon"
+                    android:layout_below="@+id/stretchingicon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/strecting_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/yogaPlusicon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <ImageView
+                    android:id="@+id/yogaIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/yogaPlusicon"
+                    android:src="@drawable/yoga" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/yogaTextView"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/yogaIcon"
+                    android:gravity="center_vertical"
+                    android:text="@string/yoga"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/yogaReservarBtn"
+                    android:layout_toRightOf="@+id/yogaTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/yogaDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/yogaIcon"
+                    android:layout_below="@+id/yogaIcon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/yoga_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/pilatesPlusicon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/pilatesTextView"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/pilatesIcon"
+                    android:gravity="center_vertical"
+                    android:text="@string/pilates"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/pilatesReservarBtn"
+                    android:layout_toRightOf="@+id/pilatesTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/pilatesDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/pilatesIcon"
+                    android:layout_below="@+id/pilatesIcon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/pilates_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/pilatesIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/pilatesPlusicon"
+                    android:src="@drawable/pilates" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/danzaFitPlusIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/danzaFitTextView"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/danzaFitIcon"
+                    android:gravity="center_vertical"
+                    android:text="@string/danza_fit"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/danceReservarBtn"
+                    android:layout_toRightOf="@+id/danzaFitTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/danzaFitDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/danzaFitIcon"
+                    android:layout_below="@+id/danzaFitIcon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/dance_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/danzaFitIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/danzaFitPlusIcon"
+                    android:src="@drawable/danza_fit" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/gimnaPlusIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/gimnaTextView"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/gimnaIcon"
+                    android:gravity="center_vertical"
+                    android:text="@string/Gimnasia"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/gimnasiaReservarBtn"
+                    android:layout_toRightOf="@+id/gimnaTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/gimnaDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/gimnaIcon"
+                    android:layout_below="@+id/gimnaIcon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/mayor_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/gimnaIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/gimnaPlusIcon"
+                    android:src="@drawable/gimnasia" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/fisioterapiaPlusicon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <ImageView
+                    android:id="@+id/fisioterapiaIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/fisioterapiaPlusicon"
+                    android:src="@drawable/fisioterapia" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/fisioterapiaTextView"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/fisioterapiaIcon"
+                    android:gravity="center_vertical"
+                    android:text="@string/fisioterapia"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/fisioterpiaReservarBtn"
+                    android:layout_toRightOf="@+id/fisioterapiaTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/fisioterapiaDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/fisioterapiaIcon"
+                    android:layout_below="@+id/fisioterapiaIcon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/fisio_descrition"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/masajesPlusicon"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_icon" />
+
+                <ImageView
+                    android:id="@+id/masajesIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/masajesPlusicon"
+                    android:src="@drawable/masajes_deportivos" />
+
+                <CustomControl.AvenirNextCondensedMediumTextView
+                    android:id="@+id/masajesTextView"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/masajesIcon"
+                    android:gravity="center_vertical"
+                    android:text="@string/masajes"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:text="Reservar"
+                    android:textAllCaps="false"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/view_horizontal_margin"
+                    android:textSize="@dimen/small_heading_text_size"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="@dimen/view_horizontal_margin"
+                    android:id="@+id/masajesReservarBtn"
+                    android:layout_toRightOf="@+id/masajesTextView"
+                    android:background="@drawable/green_btn"  />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/masajesDescriptionTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/masajesIcon"
+                    android:layout_below="@+id/masajesIcon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/masajes_description"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/categoryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/backButtonClick"
+        android:scrollbars="none" />
+
+
+</RelativeLayout>

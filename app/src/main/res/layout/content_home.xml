@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/iconLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/textColor"
+        android:padding="7dp">
+
+        <ImageView
+            android:id="@+id/backButtonClick"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/menu_icon"
+            android:tint="@android:color/white" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/iconLayout"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/textColor"
+                android:textSize="25sp" />
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:text="AGENDA"
+                android:textColor="@color/textColor"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/plusicon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="11dp"
+                android:src="@drawable/add" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/titleLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                <CalendarView
+                    android:id="@+id/calenderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/sesinorRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <CustomControl.AvenirNextCondensedBoldTextView
+                        android:id="@+id/noDataFound"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="¡Por ahora no tienes ninguna OLU actividad programada!"
+                        android:textColor="@color/textColor"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/personalEventView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88000000"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/popup_back"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/crossIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/cross" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Título:"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/detail_text_size" />
+
+                <CustomControl.AvenirNextCondensedRegularEditText
+                    android:id="@+id/titleEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sub_detail_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Día:"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/detail_text_size" />
+
+                <CustomControl.AvenirNextCondensedRegularEditText
+                    android:id="@+id/dateEditView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:focusable="false"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Inicio:"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/detail_text_size" />
+
+                <CustomControl.AvenirNextCondensedRegularEditText
+                    android:id="@+id/startTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:focusable="false"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Finaliza:"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/detail_text_size" />
+
+                <CustomControl.AvenirNextCondensedRegularEditText
+                    android:id="@+id/endTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:focusable="false"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Repetir:"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/detail_text_size" />
+
+                <!--<CustomControl.AvenirNextCondensedRegularEditText-->
+                    <!--android:id="@+id/repeatType"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="6"-->
+                    <!--android:focusable="false"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="@color/colorWhite"-->
+                    <!--android:textSize="20sp" />-->
+
+                <Spinner
+                    android:id="@+id/repeatTypeSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/guardarBtn"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="@dimen/view_height"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="Guardar"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_detail_text_size" />
+
+            <Button
+                android:id="@+id/eliminarBtn"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="Eliminar"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_detail_text_size"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

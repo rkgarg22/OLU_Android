@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DEDEDE</color>
+    <color name="colorPrimaryDark">#DEDEDE</color>
+    <color name="colorAccent">#0096A9</color>
+
+    <color name="greyBackgroundColor">#FFFFFF</color>
+    <color name="textColor">#415364</color>
+
+    <color name="greyColor">#DBE0E4</color>
+    <color name="grey">#67686B</color>
+
+    <color name="dark_greyColor">#788794</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorSelected">#6D6E71</color>
+</resources>

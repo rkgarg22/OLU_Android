@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/back_btn" />
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_toRightOf="@+id/backButtonClick"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TERMINOS"
+            android:id="@+id/title1"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/title2"
+            android:text="Y CONDICIONES"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/titleLayout"
+        android:layout_marginTop="15dp"
+        android:layout_height="match_parent" />
+</RelativeLayout>

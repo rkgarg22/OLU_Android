@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="540.9px" height="540.9px" viewBox="0 0 540.9 540.9" style="enable-background:new 0 0 540.9 540.9;" xml:space="preserve"
+	>
+<style type="text/css">
+	.st0{fill:#D8DFE1;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.99,4.99;}
+</style>
+<g id="Layer_2_1_">
+	<g id="Layer_1-2">
+		<g id="_Group_">
+			<g id="_Group_2">
+				<circle id="_Path_" class="st0" cx="270.5" cy="270.4" r="237.7"/>
+				<g id="_Group_3">
+					<g id="_Group_4">
+						<path id="_Path_2" class="st1" d="M253.1,136.9v24.7c0,5.3,4.3,9.6,9.6,9.6h5.3c5.3,0,9.6-4.3,9.6-9.6v0v-24.7H253.1z"/>
+					</g>
+					<line id="_Path_3" class="st2" x1="239.3" y1="136.9" x2="291.4" y2="136.9"/>
+					<g id="_Group_5">
+						<path class="st2" d="M191.3,265.7c-0.3,0.8-0.6,1.5-0.9,2.3"/>
+						<path class="st3" d="M188.8,272.7c-13.4,42.3,10.1,87.4,52.4,100.8s87.4-10.1,100.8-52.4c13.4-42.3-10.1-87.4-52.4-100.8
+							c-5.8-1.8-11.9-3-18-3.5"/>
+						<path class="st2" d="M269.1,216.7c-0.8,0-1.7-0.1-2.5-0.1"/>
+					</g>
+					<line id="_Path_4" class="st2" x1="355.2" y1="211.2" x2="382.6" y2="184"/>
+					<circle id="_Path_5" class="st2" cx="265.4" cy="296.9" r="106.9"/>
+					<circle id="_Path_6" class="st2" cx="265.4" cy="296.9" r="19.5"/>
+					<line id="_Path_7" class="st2" x1="265.4" y1="277.4" x2="265.4" y2="235.7"/>
+				</g>
+			</g>
+			<g id="_Group_6">
+				<path id="_Compound_Path_" class="st1" d="M270.5,540.9C121.1,540.9,0,419.9,0,270.5c0-71.7,28.5-140.5,79.2-191.3
+					c105.6-105.6,276.9-105.6,382.5,0s105.6,276.9,0,382.5C411.1,512.6,342.2,541.1,270.5,540.9z M270.5,39.7
+					C143,39.7,39.7,143,39.7,270.5c0,61.2,24.3,119.9,67.6,163.2c90.6,89.7,236.7,89,326.3-1.6c89.1-89.9,89.1-234.8,0-324.7
+					C390.5,63.9,331.7,39.5,270.5,39.7L270.5,39.7z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

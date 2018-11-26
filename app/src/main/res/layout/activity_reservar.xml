@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <CustomControl.AvenirNextCondensedBoldTextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_toRightOf="@+id/backButtonClick"
+        android:gravity="center"
+        android:text="@string/reservar_title"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleText">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_horizontal_margin">
+
+            <CalendarView
+                android:id="@+id/calenderView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/horaClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/horaTextView"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/shape_rounded_corner_dark_grey"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp"
+                android:text="@string/selecciona_la_hora"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/noOfPersonTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/horaTextView"
+                android:layout_below="@+id/horaClick"
+                android:layout_marginTop="15dp"
+                android:text="@string/no_of_person"
+                android:textColor="@color/textColor"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/nopLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noOfPersonTitle"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/individualLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/view_horizontal_margin"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/individualImageView"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/individual" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/individual"
+                        android:textColor="@color/textColor"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/noOfPersonLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/view_horizontal_margin"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:id="@+id/noOfPerson"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/shape_rounded_corner_grey"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@android:color/white"
+                        android:textSize="30sp" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Grupal"
+                        android:textColor="@color/textColor"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="75dp">
+
+                    <ImageView
+                        android:id="@+id/plus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/plus" />
+
+                    <ImageView
+                        android:id="@+id/minus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/minus" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/groupLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_horizontal_margin"
+                    android:layout_marginRight="@dimen/view_horizontal_margin"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/groupImageView"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/group" />
+
+                    <CustomControl.AvenirNextCondensedRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/group"
+                        android:textColor="@color/textColor"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/nopLayout"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/listButton"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_rounded_corner_dark_grey"
+                    android:gravity="center"
+                    android:text="Editar"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/cancelButton"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/shape_rounded_corner_dark_grey"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/buttonLayout"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CustomControl.LatoBoldButton
+                        android:id="@+id/confirmBtn"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/green_btn"
+                        android:gravity="start|center"
+                        android:paddingLeft="5dp"
+                        android:text="Reservar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/horaTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/calenderView"
+                android:layout_marginLeft="10dp"
+                android:text="@string/hora"
+                android:textColor="@color/textColor"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

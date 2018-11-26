@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:id="@+id/parentRow"
+    android:orientation="horizontal">
+
+    <CustomControl.AvenirNextCondensedMediumTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/view_horizontal_margin"
+        android:text="2"
+        android:id="@+id/count"
+        android:textColor="@color/textColor"
+        android:textSize="25sp"
+        android:visibility="visible" />
+
+    <View
+        android:layout_width="@dimen/view_height"
+        android:layout_height="2dp"
+        android:background="@color/textColor"/>
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camilo Ocha"
+            android:id="@+id/name"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <CustomControl.AvenirNextCondensedMediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enfasis en hitt"
+            android:id="@+id/userInfo"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+       <RatingBar
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/ratingBar"
+           style="@style/Widget.AppCompat.RatingBar.Small"
+           android:progress="100"
+           />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/onDemand"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/passwordEditText"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/green_btn"
+        android:gravity="start|center"
+        android:paddingLeft="10dp"
+        android:text="@string/ver"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

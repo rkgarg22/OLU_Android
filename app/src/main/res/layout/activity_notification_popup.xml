@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Popup_notification"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_back"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/info_btn" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Nombre:"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/detail_text_size" />
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sub_detail_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Categoría:"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/detail_text_size" />
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:id="@+id/category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sub_detail_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Día:"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/detail_text_size" />
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:id="@+id/date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sub_detail_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Hora:"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/detail_text_size" />
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:id="@+id/time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sub_detail_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Lugar:"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/detail_text_size" />
+
+            <CustomControl.AvenirNextCondensedBoldTextView
+                android:id="@+id/location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sub_detail_text_size" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/mapaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_horizontal_margin"
+            android:gravity="start|center"
+            android:src="@drawable/pop_direction"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/statusLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/view_horizontal_margin"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/noOfPerson"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/shape_rounded_corner_grey"
+                    android:gravity="center"
+                    android:text="2"
+                    android:visibility="gone"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/statusImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/individual" />
+                <!--group-->
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/statusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/individual"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/acceptBtn"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="Acepto"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_detail_text_size" />
+
+            <Button
+                android:id="@+id/declineBtn"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/acceptBtn"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/view_horizontal_margin"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="Rechazo"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_detail_text_size" />
+
+            <Button
+                android:id="@+id/iniciarBtn"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/view_horizontal_margin"
+                android:background="@drawable/green_btn"
+                android:layout_below="@+id/declineBtn"
+                android:gravity="start|center"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="10dp"
+                android:text="@string/iniciar"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_detail_text_size"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

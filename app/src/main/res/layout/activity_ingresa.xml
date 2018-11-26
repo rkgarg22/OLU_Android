@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="@dimen/view_horizontal_margin"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INGRESA"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="TU UBICACIÓN"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <CustomControl.AvenirNextCondensedRegularTextView
+        android:id="@+id/tileDescTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleLayout"
+        android:layout_centerHorizontal="true"
+        android:text="Donde se realizará la actividad OLU"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sub_detail_text_size" />
+
+    <RelativeLayout
+        android:id="@+id/mapFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tileDescTextView"
+        android:layout_marginTop="10dp"
+        android:visibility="visible">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/current_location_icon"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tileDescTextView"
+        android:orientation="vertical">
+
+        <AutoCompleteTextView
+            android:id="@+id/editTextLocation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_rounded_corner_light_grey"
+            android:hint="Ingresa ubicación "
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:textColor="@color/textColor" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/savedLocationRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#FFFFFF" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/confirmBtn"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/passwordEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/green_btn"
+        android:gravity="start|center"
+        android:paddingLeft="10dp"
+        android:text="Confirmar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+</RelativeLayout>

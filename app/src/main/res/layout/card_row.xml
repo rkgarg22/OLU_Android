@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/view_height"
+    android:id="@+id/parentRow"
+    android:orientation="horizontal">
+
+    <CustomControl.AvenirNextCondensedMediumTextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:gravity="left|center_vertical"
+        android:id="@+id/card"
+        android:text="XXXXXXXXXX"
+        android:textSize="@dimen/detail_text_size"/>
+    <ImageView
+        android:layout_width="@dimen/view_height"
+        android:id="@+id/selectedImageView"
+        android:padding="4dp"
+        android:src="@drawable/selected"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="@dimen/view_height"
+        android:id="@+id/delete"
+        android:padding="4dp"
+        android:src="@android:drawable/ic_menu_delete"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

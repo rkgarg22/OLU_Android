@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/profileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/userImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    fresco:roundAsCircle = "true"
+                    android:background="@drawable/user_img" />
+
+                <ImageView
+                    android:id="@+id/editProfile"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignTop="@+id/userImage"
+                    android:layout_marginLeft="-15dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_toRightOf="@+id/userImage"
+                    android:src="@drawable/menu_edit_icon" />
+
+            </RelativeLayout>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:progress="0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="100dp">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre:"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="100dp">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Teléfono:"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/phoneNumberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text=""
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="100dp">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:id="@+id/emailtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/dotted_line" />
+
+        <LinearLayout
+            android:id="@+id/sesionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/locationIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/pilatesPlusicon"
+                android:src="@drawable/mis_session_icon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MIS"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="22sp" />
+
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="SESIONES"
+                    android:textColor="@color/textColor"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/sessionBtn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="Ver"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/dotted_line" />
+
+        <LinearLayout
+            android:id="@+id/pagosLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/book" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MIS"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="22sp" />
+
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="PAGOS"
+                    android:textColor="@color/textColor"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/pagosBtn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="Ver"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

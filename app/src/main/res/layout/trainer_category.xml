@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/backButtonClick"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:src="@drawable/back_btn" />
+
+    <ImageView
+        android:id="@+id/doneButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_alignParentRight="true"
+        android:tint="@color/colorAccent"
+        android:padding="@dimen/view_horizontal_margin"
+        android:background="@drawable/circle"
+        android:src="@drawable/com_facebook_button_like_icon_selected" />
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/backButtonClick"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/view_horizontal_margin"
+        android:layout_toLeftOf="@+id/doneButton"
+        android:orientation="horizontal">
+
+        <CustomControl.AvenirNextCondensedBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_screen_title"
+            android:textColor="@color/textColor"
+            android:textSize="30sp" />
+
+        <CustomControl.AvenirNextCondensedRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/register_screen_title1"
+            android:textColor="@color/textColor"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/categoryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/addCategory" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/addCategory"
+       android:layout_below="@+id/backButtonClick"
+        android:layout_margin="@dimen/view_horizontal_margin"
+        android:src="@drawable/plus" />
+
+    <CustomControl.AvenirNextCondensedMediumTextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/addCategory"
+        android:layout_below="@+id/backButtonClick"
+        android:gravity="center"
+        android:textSize="@dimen/sub_detail_text_size"
+        android:layout_margin="@dimen/view_horizontal_margin"
+        android:text="Haga clic en el botón más para agregar actividad"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/addCategoryPopup"
+        android:visibility="gone"
+        android:background="#8C000000">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:background="@color/greyColor"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/backButtonClick"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CustomControl.AvenirNextCondensedBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/categories"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+
+                <CustomControl.AvenirNextCondensedRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/textColor"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:id="@+id/categorySpinner"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin" />
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/singlePrice"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Valor clase individual"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:textColor="@color/textColor" />
+
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/singlePrice2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Valor clase grupal 2 personas"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/singlePrice3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Valor clase grupal 3 personas"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:textColor="@color/textColor" />
+
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/singlePrice4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Valor clase grupal 4 personas"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:textColor="@color/textColor" />
+
+            <CustomControl.AvenirNextCondensedRegularEditText
+                android:id="@+id/companyPrice"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Valor clase Empresarial"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+            <Button
+                android:id="@+id/addCategoryBtn"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:background="@drawable/green_btn"
+                android:gravity="start|center"
+                android:paddingLeft="10dp"
+                android:text="Añadir"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>
