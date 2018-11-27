@@ -65,6 +65,7 @@ public class MetadosPagosActivity extends GenricActivity {
     CardAdapter cardAdapter;
 
     String requestId;
+    boolean isDeletedSelectedOne = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -230,7 +231,7 @@ public class MetadosPagosActivity extends GenricActivity {
         }
     }
 
-    public void deletePayment(String reqId) {
+    public void deletePayment(String reqId, final int pos) {
         AppCommon.getInstance(this).setNonTouchableFlags(this);
         if (AppCommon.getInstance(MetadosPagosActivity.this).isConnectingToInternet(MetadosPagosActivity.this)) {
             progressBar.setVisibility(View.VISIBLE);
@@ -245,6 +246,11 @@ public class MetadosPagosActivity extends GenricActivity {
                         CommonIntResponse commonIntResponse = (CommonIntResponse) response.body();
                         if (commonIntResponse.getSuccess() == 1) {
                             AppCommon.getInstance(MetadosPagosActivity.this).showDialog(MetadosPagosActivity.this, getString(R.string.card_deleted_successfully));
+                            if (cardInfoArrayList.get(pos).getDefaultCard() == 1) {
+                                isDeletedSelectedOne = true;
+                            } else {
+                                isDeletedSelectedOne = false;
+                            }
                             getCardListAPI();
                         } else {
                             AppCommon.getInstance(MetadosPagosActivity.this).showDialog(MetadosPagosActivity.this, commonIntResponse.getError());
@@ -332,7 +338,7 @@ public class MetadosPagosActivity extends GenricActivity {
         builder.setPositiveButton(this.getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                deletePayment(cardInfoArrayList.get(adapterPosition).getRequestId());
+                deletePayment(cardInfoArrayList.get(adapterPosition).getRequestId(), adapterPosition);
                 dialogInterface.dismiss();
             }
         });
@@ -380,6 +386,18 @@ public class MetadosPagosActivity extends GenricActivity {
                             cardInfoArrayList.clear();
                             cardInfoArrayList.addAll(cardListResponse.getCardInfoArrayList());
                             cardAdapter.notifyDataSetChanged();
+
+                            if (isDeletedSelectedOne && cardInfoArrayList.size() > 0) {
+                                setSelectCardAPI(cardInfoArrayList.get(0).getRequestId());
+                                isDeletedSelectedOne = false;
+                            } else if (cardInfoArrayList.size() == 1) {
+                                if (cardInfoArrayList.get(0).getDefaultCard() == 0) {
+                                    setSelectCardAPI(cardInfoArrayList.get(0).getRequestId());
+                                    isDeletedSelectedOne = false;
+                                }
+                            } else {
+                                isDeletedSelectedOne = false;
+                            }
                         } else {
                             AppCommon.getInstance(MetadosPagosActivity.this).showDialog(MetadosPagosActivity.this, cardListResponse.getError());
                         }
@@ -453,7 +471,7 @@ public class MetadosPagosActivity extends GenricActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
                 Intent intent = new Intent(MetadosPagosActivity.this, WebViewActivity.class);
-                intent.putExtra("url",processURl);
+                intent.putExtra("url", processURl);
                 startActivityForResult(intent, WEBVIEW_RETURN_CODE);
             }
         });

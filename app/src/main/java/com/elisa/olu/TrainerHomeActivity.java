@@ -1002,6 +1002,9 @@ public class TrainerHomeActivity extends GenricActivity {
                             AppCommon.getInstance(TrainerHomeActivity.this).setStartBookingID(onGoingBookingResponse.getTodayBookingObject().getBookingId());
                             AppCommon.getInstance(TrainerHomeActivity.this).setStartTrainingObject(new Gson().toJson(onGoingBookingResponse.getTodayBookingObject()));
                             setInciarButtonAccordingly();
+                        }else{
+                            AppCommon.getInstance(TrainerHomeActivity.this).setStartBookingID("");
+                            setInciarButtonAccordingly();
                         }
                     } else {
                         //AppCommon.getInstance(TrainerHomeActivity.this).showDialog(TrainerHomeActivity.this, getString(R.string.serverError));

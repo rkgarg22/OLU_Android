@@ -39,9 +39,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         CardInfo cardInfoObj = cardInfoArrayList.get(position);
         holder.card.setText("XXXX XXXX XXXX " + cardInfoArrayList.get(position).getCardNumber());
         if (cardInfoObj.getDefaultCard() == 1) {
-            holder.selectedImageView.setImageResource(R.drawable.selected);
+            holder.selectedImageView.setImageResource(R.drawable.checked);
         } else {
-            holder.selectedImageView.setImageResource(R.drawable.unselected_tick);
+            holder.selectedImageView.setImageResource(R.drawable.unchecked);
         }
     }
 

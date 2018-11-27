@@ -159,7 +159,7 @@ public class TrainerPaymentHistoryActivity extends GenricActivity {
         for (int i = 0; i < paymentHistoryObjectArrayList.size(); i++) {
             totalAmount = totalAmount + Float.parseFloat(paymentHistoryObjectArrayList.get(i).getAmount());
         }
-        totalPayment.setText(String.valueOf(totalAmount));
+        totalPayment.setText(String.format("%.3f",totalAmount));
     }
 
     @OnClick(R.id.backButtonClick)
