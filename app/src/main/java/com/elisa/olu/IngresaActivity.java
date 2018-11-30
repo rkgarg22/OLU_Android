@@ -115,7 +115,7 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
         ButterKnife.bind(this);
         isComingFromReserverScreen = getIntent().getBooleanExtra("isComingFromReservar", false);
         typeFilter = new AutocompleteFilter.Builder()
-                .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
+                //.setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
                 .setCountry("CO")
                 .build();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

@@ -164,9 +164,10 @@ public class TrainerPaymentHistoryActivity extends GenricActivity {
         //totalAmount = totalAmount * 1000;
        // String amount = String.format("%.3f", totalAmount);
       //  amount = amount.replace(",",".");
-        NumberFormat format = NumberFormat.getCurrencyInstance(getResources().getConfiguration().locale);
+        NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
         String amount= format.format(Float.valueOf(totalAmount));
         amount = amount.replace(",",".");
+        amount = amount.replace("$","");
         totalPayment.setText(amount);
     }
 

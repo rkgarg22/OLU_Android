@@ -703,6 +703,7 @@ public class TrainerHomeActivity extends GenricActivity {
                             finishButton.setVisibility(View.GONE);
                             iniciarBtn.setVisibility(View.GONE);
                             setLockUnlock();
+                            AppCommon.getInstance(TrainerHomeActivity.this).unRegisterAlarm(Integer.parseInt(todayBookingObj.getBookingId()));
                         }
 
                     } else {
