@@ -195,18 +195,18 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
         }
     }
 
-    private LatLngBounds setBounds(LatLng latLng, int mDistanceInMeters) {
+    private LatLngBounds setBounds(LatLng latLng, double mDistanceInMeters) {
         double latRadian = Math.toRadians(latLng.latitude);
 
-        double degLatKm = 110.574235;
-        double degLongKm = 110.572833 * Math.cos(latRadian);
-        double deltaLat = mDistanceInMeters / 1000.0 / degLatKm;
-        double deltaLong = mDistanceInMeters / 1000.0 / degLongKm;
+       // double degLatKm = 110.574235;
+      //  double degLongKm = 110.572833 * Math.cos(latRadian);
+       // double deltaLat = mDistanceInMeters / 1000.0 / degLatKm;
+       // double deltaLong = mDistanceInMeters / 1000.0 / degLongKm;
 
-        double minLat = latLng.latitude - deltaLat;
-        double minLong = latLng.longitude - deltaLong;
-        double maxLat = latLng.latitude + deltaLat;
-        double maxLong = latLng.longitude + deltaLong;
+        double minLat = latLng.latitude - mDistanceInMeters;
+        double minLong = latLng.longitude - mDistanceInMeters;
+        double maxLat = latLng.latitude + mDistanceInMeters;
+        double maxLong = latLng.longitude + mDistanceInMeters;
 
         Log.d("loc1", "Min: " + Double.toString(minLat) + "," + Double.toString(minLong));
         Log.d("loc2", "Max: " + Double.toString(maxLat) + "," + Double.toString(maxLong));
@@ -310,7 +310,7 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
         editTextLocation.setThreshold(1);
         editTextLocation.setOnItemClickListener(mAutocompleteClickListener);
         if (!latitude.equals("") && !longitude.equals("")) {
-            BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)), 10);
+            BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)), 0.001);
         }
         mPlaceArrayAdapter = new PlaceArrayAdapter(this, android.R.layout.simple_list_item_1,
                 BOUNDS_MOUNTAIN_VIEW, typeFilter);

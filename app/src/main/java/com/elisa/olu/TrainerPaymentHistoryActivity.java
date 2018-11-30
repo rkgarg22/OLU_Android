@@ -10,7 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import API.PretoAppService;
 import API.ServiceGenerator;
@@ -56,7 +58,7 @@ public class TrainerPaymentHistoryActivity extends GenricActivity {
     PaymentHistoryAdapter paymentHistoryAdapter;
     ArrayList<PaymentHistoryObject> paymentHistoryObjectArrayList = new ArrayList<PaymentHistoryObject>();
     Call call;
-    boolean isOnPendingTab = false;
+    boolean isOnPendingTab = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,7 +161,13 @@ public class TrainerPaymentHistoryActivity extends GenricActivity {
         for (int i = 0; i < paymentHistoryObjectArrayList.size(); i++) {
             totalAmount = totalAmount + Float.parseFloat(paymentHistoryObjectArrayList.get(i).getAmount());
         }
-        totalPayment.setText(String.format("%.3f",totalAmount));
+        //totalAmount = totalAmount * 1000;
+       // String amount = String.format("%.3f", totalAmount);
+      //  amount = amount.replace(",",".");
+        NumberFormat format = NumberFormat.getCurrencyInstance(getResources().getConfiguration().locale);
+        String amount= format.format(Float.valueOf(totalAmount));
+        amount = amount.replace(",",".");
+        totalPayment.setText(amount);
     }
 
     @OnClick(R.id.backButtonClick)
