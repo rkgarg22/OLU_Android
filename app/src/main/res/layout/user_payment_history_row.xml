@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
     android:id="@+id/parentRowAccepted"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
     android:layout_marginTop="10dp"
     android:orientation="horizontal">
 
     <CustomControl.AvenirNextCondensedMediumTextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:text="05/01/18"
         android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:gravity="center"
+        android:text="05/01/18"
         android:textColor="@color/textColor"
         android:textSize="16sp" />
 
@@ -20,39 +20,48 @@
         android:layout_width="30dp"
         android:layout_height="3dp"
         android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"
         android:background="@color/colorAccent" />
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_weight="2"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
+        android:layout_weight="2"
         android:gravity="center|start"
         android:orientation="vertical">
 
         <CustomControl.AvenirNextCondensedBoldTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/textColor"
             android:id="@+id/categoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
 
             android:textSize="16sp" />
 
         <CustomControl.AvenirNextCondensedMediumTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColor="@color/textColor"
             android:textSize="16sp" />
 
         <CustomControl.AvenirNextCondensedMediumTextView
+            android:id="@+id/timeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/timeTextView"
             android:textColor="@color/textColor"
             android:textSize="16sp" />
+
+        <CustomControl.AvenirNextCondensedMediumTextView
+            android:id="@+id/referenceIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            android:visibility="gone"/>
 
     </LinearLayout>
+
 </LinearLayout>

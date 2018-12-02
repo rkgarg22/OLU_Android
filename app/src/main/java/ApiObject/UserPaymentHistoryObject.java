@@ -20,6 +20,9 @@ public class UserPaymentHistoryObject {
     @SerializedName("time")
     String time;
 
+    @SerializedName("reference")
+    String reference;
+
     public String getDate() {
         return date;
     }
@@ -50,5 +53,13 @@ public class UserPaymentHistoryObject {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 }

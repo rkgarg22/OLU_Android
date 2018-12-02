@@ -52,6 +52,8 @@ public class UserPaymentHistoryAdapter extends RecyclerView.Adapter<UserPaymentH
         holder.categoryName.setText(paymentHistoryObject.getCategory());
         holder.amount.setText(AppCommon.getInstance(context).getPriceInFormat(paymentHistoryObject.getAmount()));
         holder.timeTextView.setText(getTimeInForamt(paymentHistoryObject.getTime()));
+        holder.referenceIdTextView.setText(paymentHistoryObject.getReference());
+        holder.referenceIdTextView.setVisibility(View.VISIBLE);
     }
 
     public String getDateInFormat(String date) {
@@ -135,6 +137,9 @@ public class UserPaymentHistoryAdapter extends RecyclerView.Adapter<UserPaymentH
 
         @BindView(R.id.timeTextView)
         AvenirNextCondensedMediumTextView timeTextView;
+
+        @BindView(R.id.referenceIdTextView)
+        AvenirNextCondensedMediumTextView referenceIdTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
