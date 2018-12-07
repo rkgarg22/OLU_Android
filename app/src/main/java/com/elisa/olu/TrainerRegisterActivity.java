@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.elisa.olu.Firebase.MyFirebaseInstanceIDService;
-import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
+import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.facebook.CallbackManager;
 import com.facebook.internal.ImageResponse;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -132,7 +132,9 @@ public class TrainerRegisterActivity extends GenricActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trainer_register_layout);
         ButterKnife.bind(this);
-       new FusedLocationTracker(this);
+//       new FusedLocationTracker(this);
+        startService(new Intent(getApplicationContext(), FusedLocationService.class));
+
         callbackManager = CallbackManager.Factory.create();
         tokenId = FirebaseInstanceId.getInstance().getToken();
         if (getIntent().getStringExtra("imageUrl") != null) {

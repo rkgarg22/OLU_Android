@@ -40,7 +40,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.elisa.olu.Firebase.NotificationPopupActivity;
-import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
+import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.google.gson.Gson;
 
 import java.text.ParseException;
@@ -162,7 +162,9 @@ public class TrainerHomeActivity extends GenricActivity {
         Calendar calendar = Calendar.getInstance();
         bookingDate = formatter.format(calendar.getTime());
 
-        new FusedLocationTracker(this);
+//        new FusedLocationTracker(this);
+        startService(new Intent(getApplicationContext(), FusedLocationService.class));
+
         getToodayBooking();
         calenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 

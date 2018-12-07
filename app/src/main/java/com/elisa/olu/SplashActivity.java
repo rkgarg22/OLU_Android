@@ -20,7 +20,7 @@ import com.elisa.olu.Firebase.NotificationPopupForCancelTrainerActivity;
 import com.elisa.olu.Firebase.NotificationPopupForDeclineActivity;
 import com.elisa.olu.Firebase.NotificationPopupForFinishActivity;
 import com.elisa.olu.Firebase.NotificationPopupForStartActivity;
-import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
+import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.google.gson.Gson;
 
 import java.security.MessageDigest;
@@ -44,7 +44,9 @@ public class SplashActivity extends GenricActivity {
         setContentView(R.layout.activity_main);
         AppCommon.getInstance(this).setUserLatitude(0.0f);
         AppCommon.getInstance(this).setUserLongitude(0.0f);
-        new FusedLocationTracker(this);
+//        new FusedLocationTracker(this);
+        startService(new Intent(getApplicationContext(), FusedLocationService.class));
+
         Locale locale = new Locale(AppCommon.getInstance(this).getSelectedLanguage());
         Locale.setDefault(locale);
         Configuration config = new Configuration();

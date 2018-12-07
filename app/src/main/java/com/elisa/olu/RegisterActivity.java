@@ -16,12 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.elisa.olu.Firebase.MyFirebaseInstanceIDService;
-import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
+import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.facebook.CallbackManager;
-import com.facebook.internal.ImageResponse;
 import com.google.firebase.iid.FirebaseInstanceId;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -111,7 +109,9 @@ public class RegisterActivity extends GenricActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-        new FusedLocationTracker(this);
+//        new FusedLocationTracker(this);
+        startService(new Intent(getApplicationContext(), FusedLocationService.class));
+
         tokenId = FirebaseInstanceId.getInstance().getToken();
         if (tokenId != "") {
             AppCommon.getInstance(this).setTokenId(tokenId);

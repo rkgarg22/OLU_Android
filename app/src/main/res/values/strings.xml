@@ -172,4 +172,5 @@
 
     <string name="switch_card_confirmation">La tarjeta de crédito seleccionada quedará como tu medio de pago principal.</string>
     <string name="card_deleted_successfully">Tarjeta eliminada exitosamente.</string>
+    <string name="location_updated_message">Location updated message</string>
 </resources>

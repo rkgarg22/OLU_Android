@@ -250,11 +250,17 @@
             android:name=".MyAlarmService"
             android:enabled="true" />
 
+        <service
+            android:name=".LocationInfrastructure.FusedLocationService"
+            android:enabled="true" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBEZAJfdT7wsSDqolfK_LVg081a86vQwas" />
 
-        <activity android:name=".WebViewPlaceToPayActivity"></activity>
+        <activity android:name=".WebViewPlaceToPayActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.elisa.olu.Firebase.MyFirebaseInstanceIDService;
-import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
+import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -94,7 +94,9 @@ public class  LoginScreenActivity extends GenricActivity {
         setContentView(R.layout.activity_login);
         FirebaseApp.initializeApp(this);
         ButterKnife.bind(this);
-        new FusedLocationTracker(this);
+//        new FusedLocationTracker(this);
+        startService(new Intent(getApplicationContext(), FusedLocationService.class));
+
         tokenId = FirebaseInstanceId.getInstance().getToken();
         if (tokenId != "") {
             AppCommon.getInstance(this).setTokenId(tokenId);
@@ -119,7 +121,8 @@ public class  LoginScreenActivity extends GenricActivity {
     }
 
     private void authorizeFaceBook() {
-        LoginManager.getInstance().logInWithReadPermissions(LoginScreenActivity.this, Arrays.asList("email", "public_profile"));
+        LoginManager.getInstance().logInWithReadPermissions(LoginScreenActivity.this,
+                Arrays.asList("email", "public_profile"));
         login_button.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -161,8 +164,6 @@ public class  LoginScreenActivity extends GenricActivity {
                     } else {
                         AppCommon.getInstance(LoginScreenActivity.this).showDialog(LoginScreenActivity.this, "Your email can't be fetched \n" + "from facebook, Please use sign up");
                     }
-
-
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }

@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
+import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -84,13 +84,15 @@ public class SearchActivity extends GenricActivity {
     String isDate;
 
     public int LOCATION_FILTER = 100;
-    FusedLocationTracker gpsTracker;
+//    FusedLocationTracker gpsTracker;
+    FusedLocationService gpsTracker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
-        gpsTracker=new FusedLocationTracker(this);
+//        gpsTracker=new FusedLocationTracker(this);
+        gpsTracker=new FusedLocationService(this);
         if (getIntent().getStringExtra("categoryId") != null ) {
             categoryId = getIntent().getStringExtra("categoryId");
             date = getIntent().getIntExtra("date", 0);

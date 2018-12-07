@@ -25,7 +25,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
+import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -126,14 +126,16 @@ public class UbicacionActivity extends GenricActivity implements OnMapReadyCallb
 
     GoogleMap googleMap;
     public LatLng currentUserLatLon;
-    FusedLocationTracker locationTracker;
+    //    FusedLocationTracker locationTracker;
+    FusedLocationService locationTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ubicacion);
         ButterKnife.bind(this);
-        locationTracker = new FusedLocationTracker(this);
+//        locationTracker = new FusedLocationTracker(this);
+        locationTracker=new FusedLocationService(this);
         mapBtn.setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
         listBtn.setTextColor(ContextCompat.getColor(this, R.color.grey));
         mapFragmentLayout.setVisibility(View.VISIBLE);
@@ -413,7 +415,7 @@ public class UbicacionActivity extends GenricActivity implements OnMapReadyCallb
         if (AppCommon.getInstance(UbicacionActivity.this).isConnectingToInternet(UbicacionActivity.this)) {
             progressBar.setVisibility(View.VISIBLE);
             PretoAppService pretoAppService = ServiceGenerator.createService(PretoAppService.class);
-            call = pretoAppService.userListing(AppCommon.getInstance(this).getUserID(), "",AppCommon.latitudeValue ,AppCommon.longitudeValue,//latitude, longitude,
+            call = pretoAppService.userListing(AppCommon.getInstance(this).getUserID(), "", AppCommon.latitudeValue, AppCommon.longitudeValue,//latitude, longitude,
                     1, time, bookingDate, categoryId, gender, rating, bookingType, "es");
             call.enqueue(new Callback() {
                 @Override
