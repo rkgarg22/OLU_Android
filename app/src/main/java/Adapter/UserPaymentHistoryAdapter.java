@@ -54,6 +54,14 @@ public class UserPaymentHistoryAdapter extends RecyclerView.Adapter<UserPaymentH
         holder.timeTextView.setText(getTimeInForamt(paymentHistoryObject.getTime()));
         holder.referenceIdTextView.setText(paymentHistoryObject.getReference());
         holder.referenceIdTextView.setVisibility(View.VISIBLE);
+
+        if(paymentHistoryObject.getPaymentStatus().equals("1")){
+            holder.statusTextView.setText("APROBADO");
+        }else if(paymentHistoryObject.getPaymentStatus().equals("0")){
+            holder.statusTextView.setText("RECHAZADO");
+        }else{
+            holder.statusTextView.setText("PENDIENTE");
+        }
     }
 
     public String getDateInFormat(String date) {
@@ -140,6 +148,10 @@ public class UserPaymentHistoryAdapter extends RecyclerView.Adapter<UserPaymentH
 
         @BindView(R.id.referenceIdTextView)
         AvenirNextCondensedMediumTextView referenceIdTextView;
+
+        @BindView(R.id.statusTextView)
+        TextView statusTextView;
+
 
         public ViewHolder(View itemView) {
             super(itemView);

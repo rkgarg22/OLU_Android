@@ -6,21 +6,46 @@
     android:layout_marginTop="10dp"
     android:orientation="horizontal">
 
-    <CustomControl.AvenirNextCondensedMediumTextView
-        android:id="@+id/date"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="05/01/18"
-        android:textColor="@color/textColor"
-        android:textSize="16sp" />
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <CustomControl.AvenirNextCondensedMediumTextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="05/01/18"
+            android:textColor="@color/textColor"
+            android:textSize="16sp" />
+
+        <CustomControl.AvenirNextCondensedMediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Estado:"
+            android:textColor="@color/textColor"
+            android:textSize="16sp" />
+
+        <CustomControl.AvenirNextCondensedMediumTextView
+            android:id="@+id/statusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Estado:"
+            android:textColor="@color/textColor"
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <View
         android:layout_width="30dp"
         android:layout_height="3dp"
-        android:layout_marginLeft="10dp"
         android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/colorAccent" />
 
@@ -60,7 +85,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/textColor"
             android:textSize="16sp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </LinearLayout>
 
