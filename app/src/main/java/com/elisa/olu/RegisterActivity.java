@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.elisa.olu.Firebase.MyFirebaseInstanceIDService;
 import com.elisa.olu.LocationInfrastructure.FusedLocationService;
+import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
 import com.facebook.CallbackManager;
 import com.google.firebase.iid.FirebaseInstanceId;
 
@@ -109,8 +110,8 @@ public class RegisterActivity extends GenricActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-//        new FusedLocationTracker(this);
-        startService(new Intent(getApplicationContext(), FusedLocationService.class));
+        new FusedLocationTracker(this);
+        //startService(new Intent(getApplicationContext(), FusedLocationService.class));
 
         tokenId = FirebaseInstanceId.getInstance().getToken();
         if (tokenId != "") {

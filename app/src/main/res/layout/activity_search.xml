@@ -52,7 +52,7 @@
         <CustomControl.AvenirNextCondensedBoldTextView
             android:layout_width="wrap_content"
             android:layout_height="44dp"
-            android:text="ESPECIALISTAS"
+            android:text="OLU TEAM"
             android:textColor="@color/textColor"
             android:textSize="25sp" />
 

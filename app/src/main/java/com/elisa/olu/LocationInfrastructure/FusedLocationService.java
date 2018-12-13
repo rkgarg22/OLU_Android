@@ -69,10 +69,7 @@ public class FusedLocationService extends Service implements
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
-//        Logger.showMessage("onStartCommand");
-        Log.i("msg-->","onStartCommand");
         buildGoogleApiClient();
-
         return START_STICKY;
     }
 
@@ -92,7 +89,6 @@ public class FusedLocationService extends Service implements
         Log.i("msg-->","onLocationUpdated: getLongitude: "+ location.getLongitude());
 
         updateUI();
-        Toast.makeText(this, getResources().getString(R.string.location_updated_message), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -103,22 +99,14 @@ public class FusedLocationService extends Service implements
         }
         if (mCurrentLocation == null) {
             mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
-//            Logger.showMessage("date: " + DateFormat.getTimeInstance().format(new Date()));
             Log.i("msg-->","onLocationUpdated: getLongitude: "+ DateFormat.getTimeInstance().format(new Date()));
             updateUI();
         }
-
-     //   if (mRequestingLocationUpdates) {
-            startLocationUpdates();
-      //  }
+        startLocationUpdates();
     }
 
     private void updateUI() {
         if (mCurrentLocation == null) return;
-        Log.i("msg-->","onLocationUpdated: getLongitude: "+ mCurrentLocation.getLongitude());
-        Log.i("msg-->","onLocationUpdated: getLongitude: "+ mCurrentLocation.getLatitude());
-//        Logger.showMessage("location updated: " + mCurrentLocation.getLongitude());
-//        Logger.showMessage("location updated: " + mCurrentLocation.getLatitude());
     }
 
     @Override
@@ -132,9 +120,6 @@ public class FusedLocationService extends Service implements
 
 
     protected synchronized void buildGoogleApiClient() {
-//        Logger.showMessage("Building GoogleApiClient: " + this);
-        Log.i("msg-->","Building GoogleApiClient: "+ this);
-
         googleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(FusedLocationService.this)
                 .addOnConnectionFailedListener(FusedLocationService.this)
@@ -223,8 +208,8 @@ public class FusedLocationService extends Service implements
         this.location = location;
         latitude = location.getLatitude();
         longitude = location.getLongitude();
-        AppCommon.getInstance(mContext).setUserLatitude(latitude);
-        AppCommon.getInstance(mContext).setUserLongitude(longitude);
+        AppCommon.getInstance(this).setUserLatitude(latitude);
+        AppCommon.getInstance(this).setUserLongitude(longitude);
         if (mContext != null && mContext instanceof LoginScreenActivity) {
             stopLocationUpdates();
             ((LoginScreenActivity) mContext).setLocation(latitude, longitude);

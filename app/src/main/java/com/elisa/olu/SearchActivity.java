@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.elisa.olu.LocationInfrastructure.FusedLocationService;
+import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -79,21 +80,22 @@ public class SearchActivity extends GenricActivity {
 
     String bookingType;
 
-   // String priceGroup;
+    // String priceGroup;
 
     String isDate;
 
     public int LOCATION_FILTER = 100;
-//    FusedLocationTracker gpsTracker;
-    FusedLocationService gpsTracker;
+
+    FusedLocationTracker gpsTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
-//        gpsTracker=new FusedLocationTracker(this);
-        gpsTracker=new FusedLocationService(this);
-        if (getIntent().getStringExtra("categoryId") != null ) {
+        gpsTracker = new FusedLocationTracker(this);
+        // gpsTracker=new FusedLocationService(this);
+        if (getIntent().getStringExtra("categoryId") != null) {
             categoryId = getIntent().getStringExtra("categoryId");
             date = getIntent().getIntExtra("date", 0);
             bookingDate = getIntent().getStringExtra("bookingDate");
@@ -106,8 +108,8 @@ public class SearchActivity extends GenricActivity {
             } else {
                 isDate = "1";
             }
-           // setupPriceGroup();
-            if(!AppCommon.latitudeValue.equals("") && !AppCommon.longitudeValue.equals("")) {
+            // setupPriceGroup();
+            if (!AppCommon.latitudeValue.equals("") && !AppCommon.longitudeValue.equals("")) {
                 getUserListing();
             }
         }
@@ -133,8 +135,8 @@ public class SearchActivity extends GenricActivity {
             @Override
             public void onRefresh() {
                 userListObjectList.clear();
-                AppCommon.longitudeValue= String.valueOf(gpsTracker.getLongitude());
-                AppCommon.latitudeValue= String.valueOf(gpsTracker.getLatitude());
+                AppCommon.longitudeValue = String.valueOf(gpsTracker.getLongitude());
+                AppCommon.latitudeValue = String.valueOf(gpsTracker.getLatitude());
                 getUserListing();
             }
         });
@@ -166,7 +168,7 @@ public class SearchActivity extends GenricActivity {
 //    }
 
     public void getUserListing() {
-        if((!AppCommon.latitudeValue.equals("")) && (!AppCommon.longitudeValue.equals(""))) {
+        if ((!AppCommon.latitudeValue.equals("")) && (!AppCommon.longitudeValue.equals(""))) {
             AppCommon.getInstance(this).setNonTouchableFlags(this);
             if (AppCommon.getInstance(SearchActivity.this).isConnectingToInternet(SearchActivity.this)) {
                 progressBar.setVisibility(View.VISIBLE);
@@ -174,7 +176,7 @@ public class SearchActivity extends GenricActivity {
                 call = pretoAppService.userListing(AppCommon.getInstance(this).getUserID(),
                         search, AppCommon.latitudeValue, AppCommon.longitudeValue,
                         1, time, bookingDate,
-                        categoryId, gender, "",bookingType,"es");
+                        categoryId, gender, "", bookingType, "es");
                 call.enqueue(new Callback() {
                     @Override
                     public void onResponse(Call call, Response response) {
@@ -264,7 +266,7 @@ public class SearchActivity extends GenricActivity {
 
     public void setOnClick(int adapterPosition) {
         UserListObject userListObject = userListObjectList.get(adapterPosition);
-        TrainerDetailObject trainerDetailObject = new TrainerDetailObject(userListObject.getFirstName(), userListObject.getLastName(), userListObject.getUserImageUrl(), userListObject.getReviews(),userListObject.getCategoriesObjectArrayList());
+        TrainerDetailObject trainerDetailObject = new TrainerDetailObject(userListObject.getFirstName(), userListObject.getLastName(), userListObject.getUserImageUrl(), userListObject.getReviews(), userListObject.getCategoriesObjectArrayList());
         if (isDate.equals("0")) {
             Intent intent = new Intent(this, ReservarActivity.class);
             intent.putExtra("fromProfile", "2");
@@ -305,8 +307,8 @@ public class SearchActivity extends GenricActivity {
     }
 
     public void locationGet(Location location) {
-        AppCommon.latitudeValue=String.valueOf(location.getLatitude());
-        AppCommon.longitudeValue=String.valueOf(location.getLongitude());
+        AppCommon.latitudeValue = String.valueOf(location.getLatitude());
+        AppCommon.longitudeValue = String.valueOf(location.getLongitude());
         getUserListing();
     }
 }

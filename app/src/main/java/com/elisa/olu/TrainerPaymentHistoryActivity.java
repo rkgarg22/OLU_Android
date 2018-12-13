@@ -161,13 +161,17 @@ public class TrainerPaymentHistoryActivity extends GenricActivity {
         for (int i = 0; i < paymentHistoryObjectArrayList.size(); i++) {
             totalAmount = totalAmount + Float.parseFloat(paymentHistoryObjectArrayList.get(i).getAmount());
         }
-        //totalAmount = totalAmount * 1000;
-       // String amount = String.format("%.3f", totalAmount);
       //  amount = amount.replace(",",".");
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
         String amount= format.format(Float.valueOf(totalAmount));
         amount = amount.replace(",",".");
         amount = amount.replace("$","");
+        totalAmount = Float.valueOf(amount);
+        totalAmount = totalAmount *1000;
+        int amountInt = (int)totalAmount;
+        double finalValue = amountInt * .001;
+        amount = String.format("%.3f", finalValue);
+        amount = amount.replace(",",".");
         totalPayment.setText(amount);
     }
 

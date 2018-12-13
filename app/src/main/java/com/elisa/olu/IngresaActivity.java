@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 
 import com.elisa.olu.LocationInfrastructure.FusedLocationService;
+import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -191,10 +192,8 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
             longitude = String.valueOf(AppCommon.getInstance(this).getUserLongitude());
             setLocation();
         } else {
-//            new FusedLocationTracker(this);
-            startService(new Intent(getApplicationContext(), FusedLocationService.class));
-
-
+            new FusedLocationTracker(this);
+           // startService(new Intent(getApplicationContext(), FusedLocationService.class));
         }
     }
 

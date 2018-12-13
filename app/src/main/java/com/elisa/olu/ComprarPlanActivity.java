@@ -169,7 +169,7 @@ public class ComprarPlanActivity extends GenricActivity {
                         if (paymentCollectResponse.getSuccess() == 1) {
                             popup.setVisibility(View.VISIBLE);
                         } else {
-                            AppCommon.getInstance(ComprarPlanActivity.this).showDialog(ComprarPlanActivity.this, paymentIntiateResponse.getError());
+                            AppCommon.getInstance(ComprarPlanActivity.this).showDialog(ComprarPlanActivity.this, paymentCollectResponse.getError());
                         }
                     } else {
                         AppCommon.getInstance(ComprarPlanActivity.this).showDialog(ComprarPlanActivity.this, getString(R.string.serverError));
@@ -208,7 +208,7 @@ public class ComprarPlanActivity extends GenricActivity {
                         if (commonResponse.getSuccess() == 1) {
                             paymentIntiateAPI();
                         } else {
-                            AppCommon.getInstance(ComprarPlanActivity.this).showDialog(ComprarPlanActivity.this, paymentIntiateResponse.getError());
+                            AppCommon.getInstance(ComprarPlanActivity.this).showDialog(ComprarPlanActivity.this, commonResponse.getError());
                         }
                     } else {
                         AppCommon.getInstance(ComprarPlanActivity.this).showDialog(ComprarPlanActivity.this, getString(R.string.serverError));

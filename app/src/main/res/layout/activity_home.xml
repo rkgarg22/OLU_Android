@@ -274,7 +274,7 @@
                 <CustomControl.AvenirNextCondensedBoldTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ver"
+                    android:text="OLU"
                     android:textColor="@color/textColor"
                     android:textSize="22sp" />
 
@@ -282,7 +282,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Especialista"
+                    android:text="TEAM"
                     android:textAllCaps="true"
                     android:textColor="@color/textColor"
                     android:textSize="20sp" />

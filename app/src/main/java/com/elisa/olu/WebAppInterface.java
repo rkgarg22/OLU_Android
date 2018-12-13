@@ -25,7 +25,7 @@ class WebAppInterface {
             @Override
             public void run() {
                 WebViewActivity activity = (WebViewActivity) context;
-                if(activity.webView.getUrl().contains("https://test.placetopay.com/redirection/cancel")){
+                if(activity.webView.getUrl().contains("redirection/cancel")){
                     Intent intent = new Intent();
                     activity.setResult(RESULT_CANCELED, intent);
                     activity.finish();

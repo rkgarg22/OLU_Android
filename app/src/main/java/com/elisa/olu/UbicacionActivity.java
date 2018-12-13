@@ -1,15 +1,13 @@
 package com.elisa.olu;
 
-import android.Manifest;
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
+
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,7 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.elisa.olu.LocationInfrastructure.FusedLocationService;
+import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -126,16 +124,14 @@ public class UbicacionActivity extends GenricActivity implements OnMapReadyCallb
 
     GoogleMap googleMap;
     public LatLng currentUserLatLon;
-    //    FusedLocationTracker locationTracker;
-    FusedLocationService locationTracker;
+    FusedLocationTracker locationTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ubicacion);
         ButterKnife.bind(this);
-//        locationTracker = new FusedLocationTracker(this);
-        locationTracker=new FusedLocationService(this);
+        locationTracker = new FusedLocationTracker(this);
         mapBtn.setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
         listBtn.setTextColor(ContextCompat.getColor(this, R.color.grey));
         mapFragmentLayout.setVisibility(View.VISIBLE);

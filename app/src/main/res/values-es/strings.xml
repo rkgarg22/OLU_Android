@@ -5,7 +5,7 @@
     <string name="user_type1_text">ENTRENA</string>
     <string name="user_type1_text2">Usuario</string>
 
-    <string name="user_type2_text">ENTRENADOR</string>
+    <string name="user_type2_text">OLU TEAM</string>
     <string name="user_type2_text2">Prestador de servicios</string>
 
     <string name="login_screen_title">INGRESO</string>
@@ -71,7 +71,7 @@
     <string name="no_of_person">Número de personas</string>
 
     <string name="ubicacion_title">UBICACIÓN</string>
-    <string name="ubicacion_desc">Selecciona uno de los instructores más cerca a ti:</string>
+    <string name="ubicacion_desc">Selecciona uno de los OLU TEAM más cerca a ti:</string>
 
     <string name="list">LISTA</string>
     <string name="map">MAPA</string>
