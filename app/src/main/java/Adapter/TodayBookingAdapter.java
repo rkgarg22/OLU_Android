@@ -58,6 +58,7 @@ public class TodayBookingAdapter extends RecyclerView.Adapter<TodayBookingAdapte
         holder.categoryName.setText(todayBookingObject.getCategory());
         holder.bookingTime.setText(getTimeInForamt(todayBookingObject.getBookingStart()));
         if (todayBookingObject.getIsAgenda()==0) {
+            holder.userImage.setVisibility(View.VISIBLE);
             holder.userImage.setImageURI(Uri.parse(todayBookingObject.getUserImageUrl()));
             holder.name.setText(todayBookingObject.getFirstName() + " " + todayBookingObject.getLastName());
         }else {

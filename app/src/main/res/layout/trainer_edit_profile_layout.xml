@@ -205,7 +205,7 @@
                 android:background="@drawable/green_btn"
                 android:gravity="start|center"
                 android:paddingLeft="10dp"
-                android:text="@string/enter"
+                android:text="Guardar"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />

@@ -143,6 +143,11 @@ public class TrainerEditProfileActivity extends GenricActivity {
 //                    , obj.getSinglePrice(), obj.getGroupPrice2(), obj.getGroupPrice3(), obj.getGroupPrice4(), obj.getCompanyPrice());
 //            categoriesObjectList.add(listObject);
 //        }
+        String category = "";
+        for (int i = 0; i < categoriesObjectList.size(); i++) {
+            category = category + categoriesObjectList.get(i).getCatergoryName() + ", ";
+        }
+        categoryTextView.setText(category);
     }
 
     private void updateLabel() {

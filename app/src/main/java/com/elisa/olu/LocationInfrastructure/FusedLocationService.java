@@ -38,7 +38,13 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import java.text.DateFormat;
 import java.util.Date;
 
+import API.PretoAppService;
+import API.ServiceGenerator;
+import APIResponse.CommonStringResponse;
 import infrastructure.AppCommon;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FusedLocationService extends Service implements
         LocationListener,
@@ -107,6 +113,30 @@ public class FusedLocationService extends Service implements
 
     private void updateUI() {
         if (mCurrentLocation == null) return;
+
+        saveUserLocation();
+    }
+
+    public void saveUserLocation() {
+        PretoAppService pretoAppService = ServiceGenerator.createService(PretoAppService.class);
+        Call call = pretoAppService.updateUserLocation(AppCommon.getInstance(FusedLocationService.this).getUserID(), String.valueOf(mCurrentLocation.getLatitude()), String.valueOf(mCurrentLocation.getLongitude()), "es");
+        call.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                if (response.code() == 200) {
+                    CommonStringResponse commonStringResponse = (CommonStringResponse) response.body();
+                    if (commonStringResponse.getSuccess().equals("1")) {
+                        AppCommon.getInstance(FusedLocationService.this).setUserLongitude(mCurrentLocation.getLongitude());
+                        AppCommon.getInstance(FusedLocationService.this).setUserLatitude(mCurrentLocation.getLatitude());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
     }
 
     @Override
