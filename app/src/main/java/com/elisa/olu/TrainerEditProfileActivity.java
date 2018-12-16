@@ -54,10 +54,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Ankit Chhabra on 6/3/2018.
- */
-
 public class TrainerEditProfileActivity extends GenricActivity {
 
     @BindView(R.id.nameEditText)
@@ -99,7 +95,6 @@ public class TrainerEditProfileActivity extends GenricActivity {
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
-
     Call call;
 
     Calendar myCalendar = Calendar.getInstance();
@@ -115,7 +110,6 @@ public class TrainerEditProfileActivity extends GenricActivity {
         ButterKnife.bind(this);
         trainerDetailObject = new Gson().fromJson(getIntent().getStringExtra("profileObject"), TrainerProfileObject.class);
         date = new DatePickerDialog.OnDateSetListener() {
-
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                   int dayOfMonth) {
@@ -125,7 +119,6 @@ public class TrainerEditProfileActivity extends GenricActivity {
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 updateLabel();
             }
-
         };
 
         nameEditText.setText(trainerDetailObject.getFirstName());
@@ -137,12 +130,6 @@ public class TrainerEditProfileActivity extends GenricActivity {
         descriptionEditText.setText(trainerDetailObject.getDescription());
 
         categoriesObjectList = trainerDetailObject.getCategoriesObjectList();
-//        for (int i = 0; i < objList.size(); i++) {
-//            CategoriesObject obj = objList.get(i);
-//            CategoriesListObject listObject = new CategoriesListObject(obj.getCategoryName(), obj.getCategoryID()
-//                    , obj.getSinglePrice(), obj.getGroupPrice2(), obj.getGroupPrice3(), obj.getGroupPrice4(), obj.getCompanyPrice());
-//            categoriesObjectList.add(listObject);
-//        }
         String category = "";
         for (int i = 0; i < categoriesObjectList.size(); i++) {
             category = category + categoriesObjectList.get(i).getCatergoryName() + ", ";

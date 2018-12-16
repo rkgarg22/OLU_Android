@@ -256,11 +256,13 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBEZAJfdT7wsSDqolfK_LVg081a86vQwas" />
+            android:value="AIzaSyBJzgzVy9iQENaHeUbqux7GPVR4nJuDB9s" />
 
         <activity android:name=".WebViewPlaceToPayActivity"
             android:screenOrientation="portrait"/>
 
     </application>
 
+
+    <!--AIzaSyBEZAJfdT7wsSDqolfK_LVg081a86vQwas-->
 </manifest>

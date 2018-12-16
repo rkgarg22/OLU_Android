@@ -25,9 +25,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Ankit Chhabra on 7/22/2018.
- */
 
 public class ForgotPasswordActivity extends GenricActivity {
 
@@ -60,7 +57,6 @@ public class ForgotPasswordActivity extends GenricActivity {
             forgotPassword(email);
         }
     }
-
 
     private void forgotPassword(String email) {
         AppCommon.getInstance(this).setNonTouchableFlags(this);
