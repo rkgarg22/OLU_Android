@@ -17,19 +17,26 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.elisa.olu.LocationInfrastructure.FusedLocationService;
 import com.elisa.olu.LocationInfrastructure.FusedLocationTracker;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.PlaceBuffer;
 import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -74,7 +81,7 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
     int GOOGLE_API_CLIENT_ID = 204015;
 
     @BindView(R.id.editTextLocation)
-    AutoCompleteTextView editTextLocation;
+    TextView editTextLocation;
 
     @BindView(R.id.savedLocationRecyclerView)
     RecyclerView savedLocationRecyclerView;
@@ -116,14 +123,14 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
         ButterKnife.bind(this);
         isComingFromReserverScreen = getIntent().getBooleanExtra("isComingFromReservar", false);
         typeFilter = new AutocompleteFilter.Builder()
-                //.setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
+                .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
                 .setCountry("CO")
                 .build();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        googlePlaceApi();
+        //googlePlaceApi();
         savedLocationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         if (getIntent().getStringExtra("categoryId") != null) {
             categoryId = getIntent().getStringExtra("categoryId");
@@ -138,6 +145,20 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
             AppCommon.latitudeValue = latitude;
             AppCommon.longitudeValue = longitude;
             AppCommon.address = getIntent().getStringExtra("address");
+        }
+    }
+
+    @OnClick(R.id.editTextLocation)
+    public void click(View view){
+        try {
+            Intent intent =
+                    new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_OVERLAY)
+                            .build(this);
+            startActivityForResult(intent, 100);
+        } catch (GooglePlayServicesRepairableException e) {
+            // TODO: Handle the error.
+        } catch (GooglePlayServicesNotAvailableException e) {
+            // TODO: Handle the error.
         }
     }
 
@@ -303,21 +324,21 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
         }
     }
 
-    private void googlePlaceApi() {
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(Places.GEO_DATA_API)
-                .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
-                .addConnectionCallbacks(this)
-                .build();
-        editTextLocation.setThreshold(1);
-        editTextLocation.setOnItemClickListener(mAutocompleteClickListener);
-        if (!latitude.equals("") && !longitude.equals("")) {
-            BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)), 0.001);
-        }
-        mPlaceArrayAdapter = new PlaceArrayAdapter(this, android.R.layout.simple_list_item_1,
-                BOUNDS_MOUNTAIN_VIEW, typeFilter);
-        editTextLocation.setAdapter(mPlaceArrayAdapter);
-    }
+//    private void googlePlaceApi() {
+//        mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .addApi(Places.GEO_DATA_API)
+//                .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
+//                .addConnectionCallbacks(this)
+//                .build();
+//        editTextLocation.setThreshold(1);
+//        editTextLocation.setOnItemClickListener(mAutocompleteClickListener);
+////        if (!latitude.equals("") && !longitude.equals("")) {
+////            BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)), 0.001);
+////        }
+//        mPlaceArrayAdapter = new PlaceArrayAdapter(this, android.R.layout.simple_list_item_1,
+//                BOUNDS_MOUNTAIN_VIEW, typeFilter);
+//        editTextLocation.setAdapter(mPlaceArrayAdapter);
+//    }
 
     private AdapterView.OnItemClickListener mAutocompleteClickListener
             = new AdapterView.OnItemClickListener() {
@@ -511,5 +532,29 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
         addressText = AppCommon.address;
 
         addCurrentLocationMarker();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlaceAutocomplete.getPlace(this, data);
+                addressText = String.valueOf(place.getAddress());
+                latitude = String.valueOf(place.getLatLng().latitude);
+                longitude = String.valueOf(place.getLatLng().longitude);
+                editTextLocation.setText(addressText);
+                isSelectFromAutoAPI = true;
+                addCurrentLocationMarker();
+               // Log.i(TAG, "Place: " + place.getName());
+            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
+                Status status = PlaceAutocomplete.getStatus(this, data);
+                // TODO: Handle the error.
+                //Log.i(TAG, status.getStatusMessage());
+
+            } else if (resultCode == RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }
     }
 }

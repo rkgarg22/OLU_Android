@@ -109,7 +109,7 @@ public class PlaceArrayAdapter extends ArrayAdapter<PlaceArrayAdapter.PlaceAutoc
                 if (constraint != null) {
                     // Query the autocomplete API for the entered constraint
                     mResultList = getPredictions(constraint);
-                    mResultList = getPredictions(constraint);
+                    //mResultList = getPredictions(constraint);
                     if (mResultList != null) {
                         // Results
                         results.values = mResultList;

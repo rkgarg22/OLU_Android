@@ -24,6 +24,7 @@ import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import infrastructure.AppCommon;
 
 public class CategoriesActivity extends GenricActivity {
 
@@ -132,6 +133,7 @@ public class CategoriesActivity extends GenricActivity {
         setContentView(R.layout.activity_categories);
         ButterKnife.bind(this);
 
+        AppCommon.getInstance(this).updateAnalytics("ACTIVIDADES SCREEN");
         setUpDescArrayList();
         final CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL);
         layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());

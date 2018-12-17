@@ -80,7 +80,7 @@
         android:layout_below="@+id/tileDescTextView"
         android:orientation="vertical">
 
-        <AutoCompleteTextView
+        <TextView
             android:id="@+id/editTextLocation"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -91,6 +91,7 @@
             android:hint="Ingresa ubicación "
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
+            android:gravity="center"
             android:singleLine="true"
             android:textColor="@color/textColor" />
 

@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.util.Base64;
 import android.util.Patterns;
@@ -22,6 +23,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.elisa.olu.MyReceiver;
 import com.elisa.olu.MyReceiverForSession;
 import com.elisa.olu.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
@@ -503,6 +505,14 @@ public class AppCommon {
         alarmManager.cancel(pendingIntent);
         pendingIntent.cancel();
     }
+
+    public void updateAnalytics(String message){
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(mContext);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, message);
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+    }
+
 }
 
 
