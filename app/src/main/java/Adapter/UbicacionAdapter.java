@@ -1,7 +1,6 @@
 package Adapter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +8,8 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.elisa.olu.InstructorProfileActivity;
-import com.elisa.olu.R;
-import com.elisa.olu.UbicacionActivity;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.tucan.olu.R;
+import com.tucan.olu.UbicacionActivity;
 
 import java.util.List;
 

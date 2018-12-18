@@ -3,7 +3,6 @@ package Adapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,13 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.elisa.olu.AcceptedSessionDetailActivity;
-import com.elisa.olu.Firebase.NotificationPopupActivity;
-import com.elisa.olu.HistoricalActivity;
-import com.elisa.olu.R;
-import com.elisa.olu.TrainerHomeActivity;
+import com.tucan.olu.AcceptedSessionDetailActivity;
+import com.tucan.olu.R;
+import com.tucan.olu.TrainerHomeActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
 
@@ -33,8 +29,6 @@ import ApiObject.TodayBookingObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Optional;
-import infrastructure.AppCommon;
 
 public class TodayBookingAdapter extends RecyclerView.Adapter<TodayBookingAdapter.ViewHolder> {
     private Activity context;

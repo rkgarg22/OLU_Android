@@ -5,13 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.elisa.olu.ComprarPlanActivity;
-import com.elisa.olu.R;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.tucan.olu.ComprarPlanActivity;
+import com.tucan.olu.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

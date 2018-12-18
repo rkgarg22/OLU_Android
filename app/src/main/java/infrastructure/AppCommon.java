@@ -20,9 +20,8 @@ import android.util.Patterns;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
-import com.elisa.olu.MyReceiver;
-import com.elisa.olu.MyReceiverForSession;
-import com.elisa.olu.R;
+import com.tucan.olu.MyReceiverForSession;
+import com.tucan.olu.R;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.io.ByteArrayOutputStream;
@@ -31,16 +30,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import APIResponse.SavedLocationResponse;
 import ApiObject.TodayBookingObject;
 
 public class AppCommon {

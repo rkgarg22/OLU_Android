@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.elisa.olu.R;
+import com.tucan.olu.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,7 +17,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import ApiObject.PaymentHistoryObject;
 import ApiObject.UserPaymentHistoryObject;
 import CustomControl.AvenirNextCondensedMediumTextView;
 import butterknife.BindView;

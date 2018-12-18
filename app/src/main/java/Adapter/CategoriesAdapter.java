@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.elisa.olu.CategoriesActivity;
-import com.elisa.olu.R;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.tucan.olu.CategoriesActivity;
+import com.tucan.olu.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

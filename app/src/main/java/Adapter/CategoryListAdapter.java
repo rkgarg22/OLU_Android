@@ -9,9 +9,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.elisa.olu.CategoriesActivity;
-import com.elisa.olu.R;
-import com.elisa.olu.TrainerCategoryActivity;
+import com.tucan.olu.R;
+import com.tucan.olu.TrainerCategoryActivity;
 
 import java.util.List;
 

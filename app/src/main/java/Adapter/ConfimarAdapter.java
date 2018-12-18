@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.elisa.olu.R;
+import com.tucan.olu.R;
 
 import butterknife.ButterKnife;
 

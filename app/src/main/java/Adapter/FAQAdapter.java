@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.elisa.olu.R;
+import com.tucan.olu.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -18,7 +18,7 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 
 
-import com.elisa.olu.R;
+import com.tucan.olu.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;

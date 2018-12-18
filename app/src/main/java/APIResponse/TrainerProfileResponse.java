@@ -1,9 +1,7 @@
 package APIResponse;
 
-import com.elisa.olu.TrainerProfileActivity;
 import com.google.gson.annotations.SerializedName;
 
-import ApiObject.TrainerDetailObject;
 import ApiObject.TrainerProfileObject;
 
 public class TrainerProfileResponse {

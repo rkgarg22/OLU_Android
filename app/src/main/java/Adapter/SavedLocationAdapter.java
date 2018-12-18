@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.elisa.olu.IngresaActivity;
-import com.elisa.olu.R;
+import com.tucan.olu.IngresaActivity;
+import com.tucan.olu.R;
 
 import java.util.List;
 

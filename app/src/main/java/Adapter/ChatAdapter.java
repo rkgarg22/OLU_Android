@@ -2,7 +2,6 @@ package Adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,17 +12,12 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.elisa.olu.ChatScreenActivity;
-import com.elisa.olu.R;
+import com.tucan.olu.R;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
 
 import ApiObject.ChatObject;
 import butterknife.BindView;

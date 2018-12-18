@@ -1,7 +1,6 @@
 package Adapter;
 
 import android.app.Activity;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.elisa.olu.MetadosPagosActivity;
-import com.elisa.olu.R;
+import com.tucan.olu.MetadosPagosActivity;
+import com.tucan.olu.R;
 
 import java.util.ArrayList;
 

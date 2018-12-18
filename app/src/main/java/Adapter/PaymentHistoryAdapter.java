@@ -1,8 +1,6 @@
 package Adapter;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.elisa.olu.AcceptedSessionDetailActivity;
-import com.elisa.olu.Firebase.NotificationPopupActivity;
-import com.elisa.olu.HistoricalActivity;
-import com.elisa.olu.R;
-import com.google.gson.Gson;
+import com.tucan.olu.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,11 +18,8 @@ import java.util.List;
 import java.util.Locale;
 
 import ApiObject.PaymentHistoryObject;
-import ApiObject.TodayBookingObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.Optional;
 import infrastructure.AppCommon;
 
 /**

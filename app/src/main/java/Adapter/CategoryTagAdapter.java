@@ -6,15 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.elisa.olu.InstructorProfileActivity;
-import com.elisa.olu.R;
+import com.tucan.olu.InstructorProfileActivity;
+import com.tucan.olu.R;
 
 import java.util.List;
 
-import ApiObject.CategoriesListObject;
 import ApiObject.CategoriesObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;

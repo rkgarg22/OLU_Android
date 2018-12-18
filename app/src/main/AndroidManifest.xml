@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.elisa.olu">
+    package="com.tucan.olu">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,14 +13,14 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
-        android:name=".OluApplication"
+        android:name="com.tucan.olu.OluApplication"
         android:allowBackup="false"
         android:icon="@drawable/olu_app_icon"
         android:label="@string/app_name"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name="com.tucan.olu.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,184 +52,184 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SelectUserTypeActivity"
+            android:name="com.tucan.olu.SelectUserTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MetadosPagosActivity"
+            android:name="com.tucan.olu.MetadosPagosActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ReviewActivity"
+            android:name="com.tucan.olu.ReviewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EditProfileActivity"
+            android:name="com.tucan.olu.EditProfileActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TrainerCategoryActivity"
+            android:name="com.tucan.olu.TrainerCategoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TermsOptionActivity"
+            android:name="com.tucan.olu.TermsOptionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name="com.tucan.olu.ForgotPasswordActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".LoginScreenActivity"
+            android:name="com.tucan.olu.LoginScreenActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.tucan.olu.RegisterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeActivity"
+            android:name="com.tucan.olu.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ChatScreenActivity"
+            android:name="com.tucan.olu.ChatScreenActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".CategoriesActivity"
+            android:name="com.tucan.olu.CategoriesActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ReservarActivity"
+            android:name="com.tucan.olu.ReservarActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UbicacionActivity"
+            android:name="com.tucan.olu.UbicacionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ChangeLocationActivity"
+            android:name="com.tucan.olu.ChangeLocationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SearchActivity"
+            android:name="com.tucan.olu.SearchActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".MenuActivity"
+            android:name="com.tucan.olu.MenuActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".IngresaActivity"
+            android:name="com.tucan.olu.IngresaActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".InstructorActivity"
+            android:name="com.tucan.olu.InstructorActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".InstructorProfileActivity"
+            android:name="com.tucan.olu.InstructorProfileActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ResumenActivity"
+            android:name="com.tucan.olu.ResumenActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ComprarPlanActivity"
+            android:name="com.tucan.olu.ComprarPlanActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MisActivity"
+            android:name="com.tucan.olu.MisActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdjustesActivity"
+            android:name="com.tucan.olu.AdjustesActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SesinorActivity"
+            android:name="com.tucan.olu.SesinorActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AgendaActivity"
+            android:name="com.tucan.olu.AgendaActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FilterActivity"
+            android:name="com.tucan.olu.FilterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HistoricalActivity"
+            android:name="com.tucan.olu.HistoricalActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ProximasActivity"
+            android:name="com.tucan.olu.ProximasActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SaldoActivity"
+            android:name="com.tucan.olu.SaldoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ConfirmarActivity"
+            android:name="com.tucan.olu.ConfirmarActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PhotoTarinerActivity"
+            android:name="com.tucan.olu.PhotoTarinerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TermsActivity"
+            android:name="com.tucan.olu.TermsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TrainerHomeActivity"
+            android:name="com.tucan.olu.TrainerHomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TutorialsActivity"
+            android:name="com.tucan.olu.TutorialsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FAQActivity"
+            android:name="com.tucan.olu.FAQActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".IniciarActivity"
+            android:name="com.tucan.olu.IniciarActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TrainerRegisterActivity"
+            android:name="com.tucan.olu.TrainerRegisterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TrainerProfileActivity"
+            android:name="com.tucan.olu.TrainerProfileActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TrainerPaymentHistoryActivity"
+            android:name="com.tucan.olu.TrainerPaymentHistoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AcceptedSessionDetailActivity"
+            android:name="com.tucan.olu.AcceptedSessionDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".WebViewActivity"
+            android:name="com.tucan.olu.WebViewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UserPaymentHistoryActivity"
+            android:name="com.tucan.olu.UserPaymentHistoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TrainerEditProfileActivity"
+            android:name="com.tucan.olu.TrainerEditProfileActivity"
             android:screenOrientation="portrait" />
 
-        <service android:name=".Firebase.MyFirebaseMessagingService">
+        <service android:name="com.tucan.olu.Firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".Firebase.MyFirebaseInstanceIDService">
+        <service android:name="com.tucan.olu.Firebase.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name=".Firebase.NotificationPopupActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".Firebase.NotificationPopupForAcceptActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupForAcceptActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".Firebase.NotificationPopupForDeclineActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupForDeclineActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".Firebase.NotificationPopupForStartActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupForStartActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".Firebase.NotificationPopupForFinishActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupForFinishActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".Firebase.NotificationPopupForCancelActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupForCancelActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".Firebase.NotificationPopupForAutoCancelActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupForAutoCancelActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".Firebase.NotificationPopupForCancelTrainerActivity"
+            android:name="com.tucan.olu.Firebase.NotificationPopupForCancelTrainerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
 
@@ -243,22 +243,22 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <receiver android:name=".MyReceiver" />
-        <receiver android:name=".MyReceiverForSession" />
+        <receiver android:name="com.tucan.olu.MyReceiver" />
+        <receiver android:name="com.tucan.olu.MyReceiverForSession" />
 
         <service
-            android:name=".MyAlarmService"
+            android:name="com.tucan.olu.MyAlarmService"
             android:enabled="true" />
 
         <service
-            android:name=".LocationInfrastructure.FusedLocationService"
+            android:name="com.tucan.olu.LocationInfrastructure.FusedLocationService"
             android:enabled="true" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBJzgzVy9iQENaHeUbqux7GPVR4nJuDB9s" />
 
-        <activity android:name=".WebViewPlaceToPayActivity"
+        <activity android:name="com.tucan.olu.WebViewPlaceToPayActivity"
             android:screenOrientation="portrait"/>
 
     </application>

@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:29152237899:android:cae76b50c6438422",
+        "mobilesdk_app_id": "1:29152237899:android:dae39e00a9680a9a",
         "android_client_info": {
-          "package_name": "com.elisa.olu"
+          "package_name": "com.tucan.olu"
         }
       },
       "oauth_client": [

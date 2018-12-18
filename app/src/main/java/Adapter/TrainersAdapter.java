@@ -9,13 +9,11 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.elisa.olu.R;
-import com.elisa.olu.SearchActivity;
+import com.tucan.olu.R;
+import com.tucan.olu.SearchActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 import ApiObject.UserListObject;
 import butterknife.BindView;

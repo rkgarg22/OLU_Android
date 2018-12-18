@@ -7,18 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.elisa.olu.AcceptedSessionDetailActivity;
-import com.elisa.olu.ChatScreenActivity;
-import com.elisa.olu.Firebase.NotificationPopupActivity;
-import com.elisa.olu.HistoricalActivity;
-import com.elisa.olu.HomeActivity;
-import com.elisa.olu.LoginScreenActivity;
-import com.elisa.olu.R;
-import com.elisa.olu.TrainerHomeActivity;
+import com.tucan.olu.AcceptedSessionDetailActivity;
+import com.tucan.olu.Firebase.NotificationPopupActivity;
+import com.tucan.olu.HistoricalActivity;
+import com.tucan.olu.R;
 import com.google.gson.Gson;
 
 import java.text.ParseException;
