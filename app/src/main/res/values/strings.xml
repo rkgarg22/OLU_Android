@@ -111,10 +111,10 @@
     <string name="inbox">Inbox</string>
     <string name="write_mgs">Escribe aqui</string>
     <string name="send">Enviar</string>
-    <!--<string name="facebook_app_id">239984380004801</string>-->
-    <string name="facebook_app_id">182033902682693</string>
-    <string name="fb_login_protocol_scheme">fb182033902682693</string>
-    <!--<string name="fb_login_protocol_scheme">fb239984380004801</string>-->
+    <string name="facebook_app_id">239984380004801</string>
+    <!--<string name="facebook_app_id">182033902682693</string>-->
+    <!--<string name="fb_login_protocol_scheme">fb182033902682693</string>-->
+    <string name="fb_login_protocol_scheme">fb239984380004801</string>
     <string name="politicaText">Política de privacidad de datos</string>
     <string name="accetJob">¿Estás  seguro que deseas confirmar la reserva?</string>
     <string name="declineJob">¿Estas  seguro  que  deseas  cancelar?</string>
