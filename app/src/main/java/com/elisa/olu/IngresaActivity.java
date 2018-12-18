@@ -150,12 +150,18 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
 
     @OnClick(R.id.editTextLocation)
     public void click(View view){
+        if (!latitude.equals("") && !longitude.equals("")) {
+            BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)), 0.001);
+            //BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(6.217660, -75.564220), 0.001);
+        }
         try {
             Intent intent =
                     new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_OVERLAY)
+                            .setBoundsBias(BOUNDS_MOUNTAIN_VIEW)
                             .setFilter(typeFilter)
                             .build(this);
             startActivityForResult(intent, 100);
+            editTextLocation.setVisibility(View.GONE);
         } catch (GooglePlayServicesRepairableException e) {
             // TODO: Handle the error.
         } catch (GooglePlayServicesNotAvailableException e) {
@@ -539,6 +545,7 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
+            editTextLocation.setVisibility(View.VISIBLE);
             if (resultCode == RESULT_OK) {
                 Place place = PlaceAutocomplete.getPlace(this, data);
                 addressText = String.valueOf(place.getAddress());
