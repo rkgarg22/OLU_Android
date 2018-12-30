@@ -17,6 +17,7 @@ import APIResponse.UserDetailResponse;
 import APIResponse.UserListingResponse;
 import APIResponse.UserPaymentHistoryResponse;
 import APIResponse.CommonResponse;
+import ApiEntity.ChangePasswordEntity;
 import ApiEntity.CreateAgendaEntity;
 import ApiEntity.LoginSignupEntity;
 import ApiEntity.ReviewEntity;
@@ -74,10 +75,10 @@ public interface PretoAppService {
             @Part MultipartBody.Part imageUrl
     );
 
-    @POST("users/resetPassword/index.php")
-    Call<RegistrationResponse> resetPassword(
-            @Body LoginSignupEntity loginSignupEntity
-    );
+//    @POST("users/resetPassword/index.php")
+//    Call<RegistrationResponse> resetPassword(
+//            @Body LoginSignupEntity loginSignupEntity
+//    );
 
 
     @Multipart
@@ -338,5 +339,10 @@ public interface PretoAppService {
     Call<CardListResponse> getCardList(
             @Query("userID") int userID,
             @Query("lang") String lang
+    );
+
+    @POST("users/resetPassword/")
+    Call<CommonResponse> resetPassword(
+            @Body ChangePasswordEntity changePasswordEntity
     );
 }

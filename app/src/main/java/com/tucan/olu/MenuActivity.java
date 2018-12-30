@@ -309,6 +309,12 @@ public class MenuActivity extends GenricActivity {
         promoCodeLayout.setVisibility(View.GONE);
     }
 
+    @OnClick(R.id.changePaswordLayout)
+    public void changePasswordClick(View v){
+        Intent changePasswordIntent = new Intent(this, ChangePasswordActivity.class);
+        startActivity(changePasswordIntent);
+    }
+
     @OnClick(R.id.submitBtn)
     public void submit(View v) {
         if (promoCodeEditText.getText().toString().isEmpty()) {
