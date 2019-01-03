@@ -199,7 +199,7 @@ public class RegisterActivity extends GenricActivity {
         }
     }
 
-    private void register(String fName, String lName, String email, final String phone, String password, final String gender, final String dob) {
+    private void register(String fName, String lName, String email, final String phone, final String password, final String gender, final String dob) {
         AppCommon.getInstance(this).setNonTouchableFlags(this);
         if (AppCommon.getInstance(RegisterActivity.this).isConnectingToInternet(RegisterActivity.this)) {
             progressBar.setVisibility(View.VISIBLE);
@@ -227,6 +227,7 @@ public class RegisterActivity extends GenricActivity {
                             AppCommon.getInstance(RegisterActivity.this).setGender(gender);
                             AppCommon.getInstance(RegisterActivity.this).setDOB(dob);
                             AppCommon.getInstance(RegisterActivity.this).setPhone(phone);
+                            AppCommon.getInstance(RegisterActivity.this).setPassword(password);
 
                             Intent intent = new Intent(RegisterActivity.this, TutorialsActivity.class);
                             startActivity(intent);

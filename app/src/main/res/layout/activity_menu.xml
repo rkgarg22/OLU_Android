@@ -418,51 +418,6 @@
 
                 </RelativeLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/devider" />
-
-                <RelativeLayout
-                    android:id="@+id/changePaswordLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/Icon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/menu_promo_icon" />
-
-                    <CustomControl.AvenirNextCondensedRegularTextView
-                        android:id="@+id/changePasswordTextView"
-                        android:layout_width="160dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:layout_toRightOf="@id/Icon"
-                        android:text="Change Password"
-                        android:textColor="@color/textColor"
-                        android:textSize="20sp" />
-
-                    <CustomControl.LatoBoldButton
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
-                        android:layout_toRightOf="@+id/changePasswordTextView"
-                        android:background="@drawable/green_btn"
-                        android:gravity="start|center"
-                        android:paddingLeft="@dimen/view_horizontal_margin"
-                        android:text="Ver"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/white" />
-
-                </RelativeLayout>
 
             </LinearLayout>
 

@@ -226,7 +226,7 @@ public class TrainerRegisterActivity extends GenricActivity {
         }
     }
 
-    private void registerTrainer(String imageUrl, String fName, String lName, String email, String phone, String password, String gen, String dateOFBirth, String desc) {
+    private void registerTrainer(String imageUrl, String fName, String lName, String email, String phone, final String password, String gen, String dateOFBirth, String desc) {
         if (AppCommon.getInstance(this).isConnectingToInternet(this)) {
             progressBar.setVisibility(View.VISIBLE);
             PretoAppService pretoAppService = ServiceGenerator.createService(PretoAppService.class);
@@ -262,6 +262,7 @@ public class TrainerRegisterActivity extends GenricActivity {
                         progressBar.setVisibility(View.GONE);
                         RegistrationResponse registrationResponse = (RegistrationResponse) response.body();
                         if (registrationResponse.getSuccess() == 1) {
+                            AppCommon.getInstance(TrainerRegisterActivity.this).setPassword(password);
 //                            User user = registrationResponse.getUserEntity();
 //                            AppCommon.getInstance(TrainerRegisterActivity.this).setUserID(user.getUserID());
 //                            AppCommon.getInstance(TrainerRegisterActivity.this).setIsUserLogIn(true);

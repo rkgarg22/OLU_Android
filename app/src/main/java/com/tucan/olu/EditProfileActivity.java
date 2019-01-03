@@ -2,6 +2,7 @@ package com.tucan.olu;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -119,6 +120,12 @@ public class EditProfileActivity extends GenricActivity {
                 .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                 myCalendar.get(Calendar.DAY_OF_MONTH)).show();
 
+    }
+
+    @OnClick(R.id.changePasswordEditText)
+    public void changePasswordClick(View v){
+        Intent changePasswordIntent = new Intent(this, ChangePasswordActivity.class);
+        startActivity(changePasswordIntent);
     }
 
     @OnClick(R.id.genderTextView)

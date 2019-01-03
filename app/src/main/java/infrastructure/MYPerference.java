@@ -2,7 +2,9 @@ package infrastructure;
 
 
 class MYPerference {
-    static final String MAIL_CHIMP_LIST_ID = "5718120463";
+
+
+    static final String USER_PASSWORD = "password";
     static final String mPREFS_NAME = "HUNGERPASS_PREFRENCES";
     static final String IS_USER_LOGIN = "isUserLogIn";
     static final String USER_ID = "userID";

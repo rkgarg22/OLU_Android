@@ -41,6 +41,8 @@ public class ChangePasswordActivity extends GenricActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
         ButterKnife.bind(this);
+
+        oldPasswordEditText.setText(AppCommon.getInstance(this).getPassword());
     }
 
     @OnClick(R.id.backButtonClick)

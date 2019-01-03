@@ -194,6 +194,23 @@
                 android:textColor="@color/textColor" />
 
 
+            <CustomControl.AvenirNextCondensedRegularTextView
+                android:id="@+id/changePasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:gravity="center|start"
+                android:hint="Cambiar tu contraseña"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:textSize="@dimen/detail_text_size"
+                android:singleLine="true"
+                android:textColor="@color/textColor" />
+
+
             <Button
                 android:layout_marginBottom="10dp"
                 android:id="@+id/updateBtn"

@@ -280,7 +280,7 @@ public class  LoginScreenActivity extends GenricActivity {
         }
     }
 
-    private void login(String email, String password) {
+    private void login(String email, final String password) {
         AppCommon.getInstance(this).setNonTouchableFlags(this);
         if (AppCommon.getInstance(LoginScreenActivity.this).isConnectingToInternet(LoginScreenActivity.this)) {
             progressBar.setVisibility(View.VISIBLE);
@@ -307,6 +307,7 @@ public class  LoginScreenActivity extends GenricActivity {
                                 AppCommon.getInstance(LoginScreenActivity.this).setGender(user.getGender());
                                 AppCommon.getInstance(LoginScreenActivity.this).setPhone(user.getPhone());
                                 AppCommon.getInstance(LoginScreenActivity.this).setLastName(user.getLastName());
+                                AppCommon.getInstance(LoginScreenActivity.this).setPassword(password);
                                 try {
                                     AppCommon.getInstance(LoginScreenActivity.this).setUserLatitude(Double.parseDouble(user.getLatitude()));
                                     AppCommon.getInstance(LoginScreenActivity.this).setUserLongitude(Double.parseDouble(user.getLongitude()));
