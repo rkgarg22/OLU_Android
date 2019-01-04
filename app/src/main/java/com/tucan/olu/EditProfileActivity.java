@@ -1,5 +1,6 @@
 package com.tucan.olu;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -125,7 +126,7 @@ public class EditProfileActivity extends GenricActivity {
     @OnClick(R.id.changePasswordEditText)
     public void changePasswordClick(View v){
         Intent changePasswordIntent = new Intent(this, ChangePasswordActivity.class);
-        startActivity(changePasswordIntent);
+        startActivityForResult(changePasswordIntent,100);
     }
 
     @OnClick(R.id.genderTextView)
@@ -247,5 +248,15 @@ public class EditProfileActivity extends GenricActivity {
         });
 
         builder.show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 100){
+            if(resultCode == Activity.RESULT_OK){
+                this.finish();
+            }
+        }
     }
 }

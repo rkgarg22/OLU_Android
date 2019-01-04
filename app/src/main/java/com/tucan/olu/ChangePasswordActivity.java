@@ -1,5 +1,8 @@
 package com.tucan.olu;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -85,7 +88,7 @@ public class ChangePasswordActivity extends GenricActivity {
                         CommonResponse registrationResponse = (CommonResponse) response.body();
                         if (registrationResponse.getSuccess() == 1) {
                             AppCommon.getInstance(ChangePasswordActivity.this).setPassword(newPassword);
-                            finish();
+                            showDialog();
                         } else {
                             AppCommon.getInstance(ChangePasswordActivity.this).showDialog(ChangePasswordActivity.this, registrationResponse.getError());
                         }
@@ -106,6 +109,24 @@ public class ChangePasswordActivity extends GenricActivity {
             AppCommon.getInstance(ChangePasswordActivity.this).clearNonTouchableFlags(ChangePasswordActivity.this);
             AppCommon.getInstance(this).showDialog(this, getResources().getString(R.string.network_error));
         }
+    }
+
+    public void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("¡La contraseña ha sido guardada exitosamente!");
+        builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                Intent intent = new Intent();
+                setResult(RESULT_OK, intent);
+                ChangePasswordActivity.this.finish();
+
+            }
+        });
+
+        builder.show();
     }
 
 }

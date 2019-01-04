@@ -140,9 +140,9 @@ public class TrainerEditProfileActivity extends GenricActivity {
     }
 
     @OnClick(R.id.changePasswordEditText)
-    public void changePasswordClick(View v){
+    public void changePasswordClick(View v) {
         Intent changePasswordIntent = new Intent(this, ChangePasswordActivity.class);
-        startActivity(changePasswordIntent);
+        startActivityForResult(changePasswordIntent, 100);
     }
 
     @OnClick(R.id.updateBtn)
@@ -225,6 +225,8 @@ public class TrainerEditProfileActivity extends GenricActivity {
                     category = category + categoriesObjectList.get(i).getCatergoryName() + ", ";
                 }
                 categoryTextView.setText(category);
+            } else if (requestCode == 100) {
+                this.finish();
             }
         }
     }
