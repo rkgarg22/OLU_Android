@@ -69,7 +69,7 @@ public class ChangePasswordActivity extends GenricActivity {
         }
     }
 
-    private void changePassword(String oldPassword, String newPassword) {
+    private void changePassword(String oldPassword, final String newPassword) {
         AppCommon.getInstance(this).setNonTouchableFlags(this);
         if (AppCommon.getInstance(ChangePasswordActivity.this).isConnectingToInternet(ChangePasswordActivity.this)) {
             progressBar.setVisibility(View.VISIBLE);
@@ -84,6 +84,7 @@ public class ChangePasswordActivity extends GenricActivity {
                         progressBar.setVisibility(View.GONE);
                         CommonResponse registrationResponse = (CommonResponse) response.body();
                         if (registrationResponse.getSuccess() == 1) {
+                            AppCommon.getInstance(ChangePasswordActivity.this).setPassword(newPassword);
                             finish();
                         } else {
                             AppCommon.getInstance(ChangePasswordActivity.this).showDialog(ChangePasswordActivity.this, registrationResponse.getError());
