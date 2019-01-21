@@ -63,7 +63,7 @@ public class TrainerCategoryActivity extends GenricActivity {
     List<CategoriesListObject> categoriesListObjectList = new ArrayList<>();
 
     String[] categoryList = {"KickBoxing", "Entrenamiento Funcional", "Stretching",
-            "Yoga", "Pilates", "Dance Fit", "Gimnasia Adulto", "fisioterapia", "Masajes Deportivos"};
+            "Yoga", "Pilates", "Dance Fit", "Gimnasia Adulto", "Fisioterapia", "Masajes Deportivos"};
 
     String[] categoryListId = {"1", "2", "3", "4", "5", "11", "10", "9", "8"};
     CategoryListAdapter categoryListAdapter;

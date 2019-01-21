@@ -16,9 +16,9 @@ android {
     buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.tucan.olu"
-        minSdkVersion 23
+        minSdkVersion 16
         targetSdkVersion 27
-        versionCode 1
+        versionCode 5
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

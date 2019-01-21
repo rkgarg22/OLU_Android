@@ -42,6 +42,7 @@ public class TrainersAdapter extends RecyclerView.Adapter<TrainersAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         UserListObject userListObject = userListObjectList.get(position);
+        //holder.userImage.setController(AppCommon.getDraweeController(holder.userImage,userListObject.getUserImageUrl(),50));
         holder.userImage.setImageURI(Uri.parse(userListObject.getUserImageUrl()));
         holder.name.setText(userListObject.getFirstName() + " " + userListObject.getLastName());
         holder.userInfo.setText(userListObject.getCategoryName());

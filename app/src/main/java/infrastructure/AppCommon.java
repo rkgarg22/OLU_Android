@@ -20,6 +20,12 @@ import android.util.Patterns;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.DraweeView;
+import com.facebook.imagepipeline.common.ResizeOptions;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.tucan.olu.MyReceiverForSession;
 import com.tucan.olu.R;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -45,6 +51,9 @@ public class AppCommon {
 
     public static final int LOCATION_PERMISSION_REQUEST_CODE = 1100;
 
+
+    //String currentLat = String.valueOf(6.217660);
+    //String curretnLon = String.valueOf(-75.564220);
     public static String latitudeValue = "";
     public static String longitudeValue = "";
     public static String address = "";
@@ -518,6 +527,20 @@ public class AppCommon {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, message);
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+    }
+
+    public static DraweeController getDraweeController(DraweeView imageView, String imageUrl, int size) {
+        Uri uri = Uri.parse(imageUrl);
+
+        ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri)
+                .setResizeOptions(new ResizeOptions(size, size))
+                .setProgressiveRenderingEnabled(false)
+                .build();
+
+        return Fresco.newDraweeControllerBuilder()
+                .setOldController(imageView.getController())
+                .setImageRequest(request)
+                .build();
     }
 
 }
