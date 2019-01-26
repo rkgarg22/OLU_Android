@@ -92,7 +92,7 @@ public class SearchActivity extends GenricActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
-        gpsTracker = new FusedLocationTracker(this);
+
         // gpsTracker=new FusedLocationService(this);
         if (getIntent().getStringExtra("categoryId") != null) {
             categoryId = getIntent().getStringExtra("categoryId");
@@ -110,7 +110,11 @@ public class SearchActivity extends GenricActivity {
             // setupPriceGroup();
             if (!AppCommon.latitudeValue.equals("") && !AppCommon.longitudeValue.equals("")) {
                 getUserListing();
+            } else {
+                gpsTracker = new FusedLocationTracker(this);
             }
+        } else {
+            gpsTracker = new FusedLocationTracker(this);
         }
 
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -133,10 +137,14 @@ public class SearchActivity extends GenricActivity {
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                userListObjectList.clear();
-                AppCommon.longitudeValue = String.valueOf(gpsTracker.getLongitude());
-                AppCommon.latitudeValue = String.valueOf(gpsTracker.getLatitude());
-                getUserListing();
+                if(gpsTracker!=null) {
+                    userListObjectList.clear();
+                    AppCommon.longitudeValue = String.valueOf(gpsTracker.getLongitude());
+                    AppCommon.latitudeValue = String.valueOf(gpsTracker.getLatitude());
+                    getUserListing();
+                }else{
+                    swipeContainer.setRefreshing(false);
+                }
             }
         });
     }
