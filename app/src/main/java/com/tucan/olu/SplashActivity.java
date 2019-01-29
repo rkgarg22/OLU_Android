@@ -45,7 +45,7 @@ public class SplashActivity extends GenricActivity {
         AppCommon.getInstance(this).setUserLatitude(0.0f);
         AppCommon.getInstance(this).setUserLongitude(0.0f);
 //        new FusedLocationTracker(this);
-        startService(new Intent(getApplicationContext(), FusedLocationService.class));
+        //startService(new Intent(getApplicationContext(), FusedLocationService.class));
 
         Locale locale = new Locale(AppCommon.getInstance(this).getSelectedLanguage());
         Locale.setDefault(locale);

@@ -237,6 +237,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
 
+        <receiver android:name=".location.LocationUpdatesBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.tucan.olu.location.LocationUpdatesBroadcastReceiver.ACTION_PROCESS_UPDATES" />
+            </intent-filter>
+        </receiver>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"

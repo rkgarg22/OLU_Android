@@ -1,5 +1,6 @@
 package com.tucan.olu;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -8,13 +9,18 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,8 +38,13 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.tucan.olu.LocationInfrastructure.FusedLocationService;
 import com.google.gson.Gson;
+import com.tucan.olu.location.LocationRequestHelper;
+import com.tucan.olu.location.LocationUpdatesBroadcastReceiver;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -61,6 +72,10 @@ import infrastructure.AppCommon;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.tucan.olu.location.Constants.FASTEST_UPDATE_INTERVAL;
+import static com.tucan.olu.location.Constants.MAX_WAIT_TIME;
+import static com.tucan.olu.location.Constants.UPDATE_INTERVAL;
 
 public class TrainerHomeActivity extends GenricActivity {
 
@@ -136,6 +151,8 @@ public class TrainerHomeActivity extends GenricActivity {
     int selRepetir = 0;
 
     String startTimeInput = "", endTimeInput = "";
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    LocationRequest mLocationRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,9 +167,9 @@ public class TrainerHomeActivity extends GenricActivity {
         Calendar calendar = Calendar.getInstance();
         bookingDate = formatter.format(calendar.getTime());
 
-//        new FusedLocationTracker(this);
-        startService(new Intent(getApplicationContext(), FusedLocationService.class));
-
+        //new FusedLocationTracker(this);
+        //startService(new Intent(getApplicationContext(), FusedLocationService.class));
+        checkPermissionDexter();
         getToodayBooking();
         calenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
@@ -191,6 +208,107 @@ public class TrainerHomeActivity extends GenricActivity {
 
             }
         });
+    }
+
+    private void checkPermissionDexter() {
+        if (Build.VERSION.SDK_INT < 23) {
+            createLocationRequest();
+            return;
+        }
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            createLocationRequest();
+        } else {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+                showRationaleDialog();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{
+                                android.Manifest.permission.ACCESS_FINE_LOCATION},
+                        PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+            }
+        }
+
+    }
+
+    private void showRationaleDialog() {
+        new android.app.AlertDialog.Builder(this)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityCompat.requestPermissions(TrainerHomeActivity.this,
+                                new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                                PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Location permission was not allowed.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setCancelable(false)
+                .setMessage("This application needs to allow use of location information.")
+                .show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    createLocationRequest();
+                } else {
+                    if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+                        Toast.makeText(this,
+                                "To enable the function of this application please enable location permission of the application" +
+                                        " from the setting screen of the terminal.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        showRationaleDialog();
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+
+    private void createLocationRequest() {
+        mLocationRequest = new LocationRequest();
+
+        mLocationRequest.setInterval(UPDATE_INTERVAL);
+
+        // Sets the fastest rate for active location updates. This interval is exact, and your
+        // application will never receive updates faster than this value.
+        mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL);
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
+        // Sets the maximum time when batched location updates are delivered. Updates may be
+        // delivered sooner than this interval.
+        mLocationRequest.setMaxWaitTime(MAX_WAIT_TIME);
+        requestLocationUpdates();
+    }
+
+    private PendingIntent getPendingIntent() {
+        Intent intent = new Intent(this, LocationUpdatesBroadcastReceiver.class);
+        intent.setAction(LocationUpdatesBroadcastReceiver.ACTION_PROCESS_UPDATES);
+        return PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    public void requestLocationUpdates() {
+        try {
+            LocationRequestHelper.setRequesting(this, true);
+            FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+            mFusedLocationClient.requestLocationUpdates(mLocationRequest, getPendingIntent());
+        } catch (SecurityException e) {
+            //Log.e(TAG, "location request error : " + e.getMessage());
+            LocationRequestHelper.setRequesting(this, false);
+            e.printStackTrace();
+
+        }
     }
 
     private void setRepetirDropDown() {
