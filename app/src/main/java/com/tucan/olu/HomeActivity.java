@@ -72,9 +72,10 @@ public class HomeActivity extends GenricActivity {
 
     @OnClick(R.id.shareButton)
     void shareButton() {
+        String text = "Olu. App te contenta con los mejores, donde quieras y cuando quieras. \n¡Te invito a descargarla! \n\nhttp://bit.ly/2sND77K";
         Intent share = new Intent(Intent.ACTION_SEND);
         share.setType("text/plain");
-        share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.elisa.olu");
+        share.putExtra(Intent.EXTRA_TEXT, text);
 
         startActivity(Intent.createChooser(share, "Share Link Using"));
     }
