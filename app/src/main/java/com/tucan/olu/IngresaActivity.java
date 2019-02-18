@@ -114,7 +114,7 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
         ButterKnife.bind(this);
         isComingFromReserverScreen = getIntent().getBooleanExtra("isComingFromReservar", false);
         typeFilter = new AutocompleteFilter.Builder()
-               // .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
+                // .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
                 .setCountry("CO")
                 .build();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -140,8 +140,8 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
     }
 
     @OnClick(R.id.editTextLocation)
-    public void click(View view){
-        if (!latitude.equals("") && !longitude.equals("")) {
+    public void click(View view) {
+        if ((latitude != null && !latitude.equals("")) && (longitude != null && !longitude.equals(""))) {
             BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)), 0.001);
             //BOUNDS_MOUNTAIN_VIEW = setBounds(new LatLng(6.217660, -75.564220), 0.001);
         }
@@ -212,17 +212,17 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
             setLocation();
         } else {
             new FusedLocationTracker(this);
-           // startService(new Intent(getApplicationContext(), FusedLocationService.class));
+            // startService(new Intent(getApplicationContext(), FusedLocationService.class));
         }
     }
 
     private LatLngBounds setBounds(LatLng latLng, double mDistanceInMeters) {
         double latRadian = Math.toRadians(latLng.latitude);
 
-       // double degLatKm = 110.574235;
-      //  double degLongKm = 110.572833 * Math.cos(latRadian);
-       // double deltaLat = mDistanceInMeters / 1000.0 / degLatKm;
-       // double deltaLong = mDistanceInMeters / 1000.0 / degLongKm;
+        // double degLatKm = 110.574235;
+        //  double degLongKm = 110.572833 * Math.cos(latRadian);
+        // double deltaLat = mDistanceInMeters / 1000.0 / degLatKm;
+        // double deltaLong = mDistanceInMeters / 1000.0 / degLongKm;
 
         double minLat = latLng.latitude - mDistanceInMeters;
         double minLong = latLng.longitude - mDistanceInMeters;
@@ -545,7 +545,7 @@ public class IngresaActivity extends GenricActivity implements OnMapReadyCallbac
                 editTextLocation.setText(addressText);
                 isSelectFromAutoAPI = true;
                 addCurrentLocationMarker();
-               // Log.i(TAG, "Place: " + place.getName());
+                // Log.i(TAG, "Place: " + place.getName());
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
                 Status status = PlaceAutocomplete.getStatus(this, data);
                 // TODO: Handle the error.

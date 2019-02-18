@@ -108,7 +108,7 @@ public class SearchActivity extends GenricActivity {
                 isDate = "1";
             }
             // setupPriceGroup();
-            if (!AppCommon.latitudeValue.equals("") && !AppCommon.longitudeValue.equals("")) {
+            if ((AppCommon.latitudeValue != null && !AppCommon.latitudeValue.equals("")) && (AppCommon.longitudeValue!=null && !AppCommon.longitudeValue.equals(""))) {
                 getUserListing();
             } else {
                 gpsTracker = new FusedLocationTracker(this);

@@ -233,8 +233,10 @@ public class TrainerRegisterActivity extends GenricActivity {
             MultipartBody.Part image = null;
             if (!imageUrl.isEmpty()) {
                 File file = FileUtils.getFile(TrainerRegisterActivity.this, Uri.parse(imageUrl));
-                RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
-                image = MultipartBody.Part.createFormData("imageUrl", file.getName(), requestFile);
+                if(file != null){
+                    RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
+                    image = MultipartBody.Part.createFormData("imageUrl", file.getName(), requestFile);
+                }
             }
             for (int i = 0; i < categoriesObjectList.size(); i++) {
                 selectedCategoriesObjectList.add(new CategoriesListObject(categoriesObjectList.get(i).getCategryID(), categoriesObjectList.get(i).getSinglePrice(), categoriesObjectList.get(i).getGroupPrice2(),

@@ -2,6 +2,7 @@ package com.tucan.olu.Firebase;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 
@@ -21,6 +22,7 @@ public class NotificationPopupForAutoCancelActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_notification_popup_for_auto_cancel);
         ButterKnife.bind(this);
     }

@@ -53,7 +53,7 @@ public class SplashActivity extends GenricActivity {
         config.locale = locale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
-        printHashKey(SplashActivity.this);
+        //printHashKey(SplashActivity.this);
 
 //        byte[] sha1 = {
 //                (byte) 0xCE, (byte)0xF6, (byte)0xC1, 0x14, 0x1A, 0x30, 0x0C, (byte) 0xFB, 0x09, 0x79, (byte)0x69,

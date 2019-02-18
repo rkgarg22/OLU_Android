@@ -206,35 +206,27 @@
 
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupForAcceptActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupForDeclineActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupForStartActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupForFinishActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupForCancelActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupForAutoCancelActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.tucan.olu.Firebase.NotificationPopupForCancelTrainerActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
 
         <receiver android:name=".location.LocationUpdatesBroadcastReceiver"

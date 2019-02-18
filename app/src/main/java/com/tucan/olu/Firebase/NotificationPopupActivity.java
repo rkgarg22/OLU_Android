@@ -3,6 +3,7 @@ package com.tucan.olu.Firebase;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -79,6 +80,7 @@ public class NotificationPopupActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_notification_popup);
         ButterKnife.bind(this);
         if (getIntent().getStringExtra("pendingObject") != null) {
