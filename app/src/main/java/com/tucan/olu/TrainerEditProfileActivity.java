@@ -238,8 +238,10 @@ public class TrainerEditProfileActivity extends GenricActivity {
             MultipartBody.Part image = null;
             if (!imageUrl.isEmpty()) {
                 File file = FileUtils.getFile(TrainerEditProfileActivity.this, Uri.parse(imageUrl));
-                RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
-                image = MultipartBody.Part.createFormData("imageUrl", file.getName(), requestFile);
+                if(file!=null) {
+                    RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
+                    image = MultipartBody.Part.createFormData("imageUrl", file.getName(), requestFile);
+                }
             }
             RequestBody userID = RequestBody.create(MultipartBody.FORM, String.valueOf(AppCommon.getInstance(this).getUserID()));
             RequestBody firstName = RequestBody.create(MultipartBody.FORM, fName);

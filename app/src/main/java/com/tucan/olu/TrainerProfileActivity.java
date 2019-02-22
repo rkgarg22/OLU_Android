@@ -129,8 +129,10 @@ public class TrainerProfileActivity extends GenricActivity {
             MultipartBody.Part image = null;
             if (outPutfileUri != null) {
                 File file = FileUtils.getFile(TrainerProfileActivity.this, outPutfileUri);
-                RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
-                image = MultipartBody.Part.createFormData("imageUrl", file.getName(), requestFile);
+                if(file!=null) {
+                    RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
+                    image = MultipartBody.Part.createFormData("imageUrl", file.getName(), requestFile);
+                }
             }
             RequestBody userID = RequestBody.create(MultipartBody.FORM, String.valueOf(AppCommon.getInstance(this).getUserID()));
             call = pretoAppService.updateUserImage(userID, image);

@@ -208,6 +208,10 @@ public class TrainerHomeActivity extends GenricActivity {
 
             }
         });
+
+        if(AppCommon.getInstance(this).getTokenId()!=""){
+            updateDeviceToken();
+        }
     }
 
     private void checkPermissionDexter() {
@@ -855,6 +859,24 @@ public class TrainerHomeActivity extends GenricActivity {
                     }
                 } else {
                     AppCommon.getInstance(TrainerHomeActivity.this).showDialog(TrainerHomeActivity.this, getString(R.string.serverError));
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void updateDeviceToken() {
+        PretoAppService pretoAppService = ServiceGenerator.createService(PretoAppService.class);
+        call = pretoAppService.updateDeviceToken(AppCommon.getInstance(this).getUserID(), AppCommon.getInstance(this).getTokenId());
+        call.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                if (response.code() == 200) {
+                    CommonStringResponse commonStringResponse = (CommonStringResponse) response.body();
                 }
             }
 

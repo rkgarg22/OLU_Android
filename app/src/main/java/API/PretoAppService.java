@@ -345,4 +345,10 @@ public interface PretoAppService {
     Call<CommonResponse> resetPassword(
             @Body ChangePasswordEntity changePasswordEntity
     );
+
+    @GET("users/UpdateDeviceToken")
+    Call<CommonStringResponse> updateDeviceToken(
+            @Query("userID") int userID,
+            @Query("firebaseTokenId") String firebaseTokenId
+    );
 }

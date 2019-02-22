@@ -180,7 +180,6 @@ public class  LoginScreenActivity extends GenricActivity {
         AppCommon.getInstance(this).setNonTouchableFlags(this);
         if (AppCommon.getInstance(LoginScreenActivity.this).isConnectingToInternet(LoginScreenActivity.this)) {
             progressBar.setVisibility(View.VISIBLE);
-            //  final String token = myFirebaseInstanceIDService.getDeviceToken();
             LoginSignupEntity loginSignupEntity = new LoginSignupEntity(fName, lName, facebookId, email, password, imageUrl, latitude, longitude,
                     AppCommon.getInstance(this).getCurrentUser(), tokenId,
                     getResources().getString(R.string.android), gender, 0, phone, dob);

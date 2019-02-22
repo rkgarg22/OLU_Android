@@ -10,10 +10,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import API.PretoAppService;
 import API.ServiceGenerator;
 import APIResponse.CommonIntResponse;
+import APIResponse.CommonStringResponse;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,7 +42,14 @@ public class HomeActivity extends GenricActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
+        if(AppCommon.getInstance(this).getTokenId()!=null && AppCommon.getInstance(this).getTokenId()!="" ){
+            updateDeviceToken();
+        }else{
+           String tokenId = FirebaseInstanceId.getInstance().getToken();
+            if (tokenId != "") {
+                AppCommon.getInstance(this).setTokenId(tokenId);
+            }
+        }
     }
 
     @Override
@@ -192,6 +201,24 @@ public class HomeActivity extends GenricActivity {
             AppCommon.getInstance(HomeActivity.this).clearNonTouchableFlags(HomeActivity.this);
             AppCommon.getInstance(this).showDialog(this, getResources().getString(R.string.network_error));
         }
+    }
+
+    public void updateDeviceToken() {
+        PretoAppService pretoAppService = ServiceGenerator.createService(PretoAppService.class);
+        call = pretoAppService.updateDeviceToken(AppCommon.getInstance(this).getUserID(), AppCommon.getInstance(this).getTokenId());
+        call.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                if (response.code() == 200) {
+                    CommonStringResponse commonStringResponse = (CommonStringResponse) response.body();
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
     }
 
 
