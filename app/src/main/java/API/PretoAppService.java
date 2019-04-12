@@ -351,4 +351,14 @@ public interface PretoAppService {
             @Query("userID") int userID,
             @Query("firebaseTokenId") String firebaseTokenId
     );
+
+    @GET("bookingUpdate/")
+    Call<CommonIntResponse> updateBookingData(
+            @Query("userID") int userID,
+            @Query("bookingID") String bookingID,
+            @Query("bookingType") String bookingType,
+            @Query("latitude") String latitude,
+            @Query("longitude") String longitude,
+            @Query("address") String address
+    );
 }

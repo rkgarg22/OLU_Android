@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tucan.olu.IngresaActivity;
+import com.tucan.olu.LocationUpdateActivity;
 import com.tucan.olu.R;
 
 import java.util.List;
@@ -18,9 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Ankit Chhabra on 9/6/2018.
- */
+
 
 public class SavedLocationAdapter extends RecyclerView.Adapter<SavedLocationAdapter.ViewHolder> {
     private Activity context;
@@ -61,7 +60,12 @@ public class SavedLocationAdapter extends RecyclerView.Adapter<SavedLocationAdap
 
         @OnClick(R.id.textLayout)
         void setTextLayout() {
-            ((IngresaActivity)context).setOnClick(getAdapterPosition());
+
+            if(context instanceof IngresaActivity) {
+                ((IngresaActivity) context).setOnClick(getAdapterPosition());
+            }else if(context instanceof LocationUpdateActivity){
+                ((LocationUpdateActivity) context).setOnClick(getAdapterPosition());
+            }
         }
     }
 }

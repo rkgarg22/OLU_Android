@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tucan.olu.AcceptedSessionDetailActivity;
@@ -44,7 +45,7 @@ public class SesionerAdapter extends RecyclerView.Adapter<SesionerAdapter.ViewHo
         this.context = context;
         this.todayBookingObjectList = todayBookingObjectList;
         this.bookingType = bookingType;
-        this.isComingFromHome =isComingFromHome;
+        this.isComingFromHome = isComingFromHome;
     }
 
     @Override
@@ -52,6 +53,8 @@ public class SesionerAdapter extends RecyclerView.Adapter<SesionerAdapter.ViewHo
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.sesioner_row, parent, false);
         View view2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.pending_row, parent, false);
         if (bookingType.equals("3") && !isComingFromHome) {
+            return new SesionerAdapter.ViewHolder(view2);
+        } else if (bookingType.equals("0") && AppCommon.getInstance(context).getCurrentUser() == 2) {
             return new SesionerAdapter.ViewHolder(view2);
         } else {
             return new SesionerAdapter.ViewHolder(view);
@@ -66,6 +69,41 @@ public class SesionerAdapter extends RecyclerView.Adapter<SesionerAdapter.ViewHo
         holder.name.setText(todayBookingObject.getFirstName() + " " + todayBookingObject.getLastName());
         holder.bookingTime.setText(getTimeInForamt(todayBookingObject.getBookingStart()) + " - " + getTimeInForamt(todayBookingObject.getBookingEnd()));
         setupCatergoryImage(todayBookingObject.getCategoryID(), holder.categoryImage);
+        if (AppCommon.getInstance(context).getCurrentUser() == 2 && (bookingType.equals("3") || bookingType.equals("0"))) {
+            holder.direction.setVisibility(View.VISIBLE);
+            holder.numberOfPerson.setVisibility(View.VISIBLE);
+            holder.direction.setText("Dirección: " + todayBookingObject.getBookingAddress());
+            holder.numberOfPerson.setText("Número de Personas: " + getNumberOfPerson(todayBookingObject.getBookingFor().trim()));
+
+            if (bookingType.equals("0")) {
+                holder.bottomLayout.setVisibility(View.GONE);
+            }else{
+                holder.bottomLayout.setVisibility(View.VISIBLE);
+            }
+            holder.editarButton.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public String getNumberOfPerson(String bookingFor) {
+        String noOfPerson = "";
+        switch (bookingFor) {
+            case "1":
+                noOfPerson = "1";
+                break;
+            case "2":
+                noOfPerson = "2";
+                break;
+            case "3":
+                noOfPerson = context.getResources().getString(R.string.group);
+                break;
+            case "4":
+                noOfPerson = "3";
+                break;
+            case "5":
+                noOfPerson = "4";
+                break;
+        }
+        return noOfPerson;
     }
 
     public String getDateInFormat(String date) {
@@ -153,6 +191,22 @@ public class SesionerAdapter extends RecyclerView.Adapter<SesionerAdapter.ViewHo
         @BindView(R.id.name)
         TextView name;
 
+        @Nullable
+        @BindView(R.id.direction)
+        TextView direction;
+
+        @Nullable
+        @BindView(R.id.numberOfPerson)
+        TextView numberOfPerson;
+
+        @Nullable
+        @BindView(R.id.bottomLayout)
+        LinearLayout bottomLayout;
+
+        @Nullable
+        @BindView(R.id.editarButton)
+        TextView editarButton;
+
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -165,7 +219,7 @@ public class SesionerAdapter extends RecyclerView.Adapter<SesionerAdapter.ViewHo
             if (AppCommon.getInstance(context).getCurrentUser() == 2) {
             } else {
                 Intent intent = new Intent(context, NotificationPopupActivity.class);
-                intent.putExtra("bookingType",bookingType);
+                intent.putExtra("bookingType", bookingType);
                 intent.putExtra("bookingFor", todayBookingObjectList.get(getAdapterPosition()).getBookingFor());
                 intent.putExtra("pendingObject", new Gson().toJson(todayBookingObjectList.get(getAdapterPosition())));
                 context.startActivity(intent);
@@ -174,22 +228,22 @@ public class SesionerAdapter extends RecyclerView.Adapter<SesionerAdapter.ViewHo
 
         @Nullable
         @Optional
-        @OnClick({R.id.parentRowAccepted,R.id.acceptParentClick})
+        @OnClick({R.id.parentRowAccepted, R.id.acceptParentClick})
         void parentRowAccepted() {
             if (AppCommon.getInstance(context).getCurrentUser() == 2) {
             } else {
-                if(isComingFromHome){
+                if (isComingFromHome) {
                     Intent intent = new Intent(context, AcceptedSessionDetailActivity.class);
                     intent.putExtra("userObject", new Gson().toJson(todayBookingObjectList.get(getAdapterPosition())));
                     context.startActivity(intent);
-                }else {
-                    if(bookingType.equals("0")) {
+                } else {
+                    if (bookingType.equals("0")) {
                         Intent intent = new Intent(context, NotificationPopupActivity.class);
                         intent.putExtra("bookingType", bookingType);
                         intent.putExtra("bookingFor", todayBookingObjectList.get(getAdapterPosition()).getBookingFor());
                         intent.putExtra("pendingObject", new Gson().toJson(todayBookingObjectList.get(getAdapterPosition())));
                         context.startActivity(intent);
-                    }else if(bookingType.equals("3")){
+                    } else if (bookingType.equals("3")) {
                         Intent intent = new Intent(context, AcceptedSessionDetailActivity.class);
                         intent.putExtra("userObject", new Gson().toJson(todayBookingObjectList.get(getAdapterPosition())));
                         context.startActivity(intent);
@@ -224,8 +278,15 @@ public class SesionerAdapter extends RecyclerView.Adapter<SesionerAdapter.ViewHo
         @Nullable
         @Optional
         @OnClick(R.id.directionLayout)
-        public void directionClick(View v){
+        public void directionClick(View v) {
             ((HistoricalActivity) context).directionClick(getAdapterPosition());
+        }
+
+        @Nullable
+        @Optional
+        @OnClick(R.id.editarButton)
+        public void editarButtonClick(View v){
+            ((HistoricalActivity) context).editarClick(getAdapterPosition());
         }
     }
 }

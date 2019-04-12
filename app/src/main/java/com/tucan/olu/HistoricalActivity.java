@@ -14,14 +14,20 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
+import javax.xml.transform.Result;
 
 import API.PretoAppService;
 import API.ServiceGenerator;
@@ -37,9 +43,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Ankit Chhabra on 4/29/2018.
- */
 
 public class HistoricalActivity extends GenricActivity {
 
@@ -64,6 +67,28 @@ public class HistoricalActivity extends GenricActivity {
     @BindView(R.id.swipeContainer)
     SwipeRefreshLayout swipeContainer;
 
+    @BindView(R.id.editarPopUpView)
+    RelativeLayout editarPopUpView;
+
+    @BindView(R.id.category)
+    TextView category;
+
+    @BindView(R.id.name)
+    TextView name;
+    @BindView(R.id.date)
+    TextView date;
+
+    @BindView(R.id.time)
+    TextView time;
+    @BindView(R.id.location)
+    TextView location;
+
+    @BindView(R.id.numberOfPerson)
+    TextView numberOfPerson;
+
+    @BindView(R.id.guardarBtn)
+    Button guardarBtn;
+
     List<TodayBookingObject> todayBookingObjectList = new ArrayList<>();
 
     SesionerAdapter sesionerAdapter;
@@ -75,6 +100,8 @@ public class HistoricalActivity extends GenricActivity {
 
     String selectedPhoneNumber = "";
 
+    String updateLatitude, updatedLongitude, updateBookingType, updatedAddress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +110,8 @@ public class HistoricalActivity extends GenricActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         historyRecyclerView.setLayoutManager(layoutManager);
         if (AppCommon.getInstance(this).getCurrentUser() == 2) {
-            accepted.setVisibility(View.GONE);
+            accepted.setText("PENDIENTE\nPOR ACEPTAR");
+            // accepted.setVisibility(View.GONE);
         } else {
             accepted.setVisibility(View.VISIBLE);
         }
@@ -137,11 +165,18 @@ public class HistoricalActivity extends GenricActivity {
 
     @OnClick(R.id.accepted)
     void setAccepted() {
-        bookingType = "3";
+
+        if (AppCommon.getInstance(this).getCurrentUser() == 2) {
+            bookingType = "0";
+            getBookingHistory("0");
+        } else {
+            bookingType = "3";
+            getBookingHistory("3");
+        }
         sesionerAdapter = new SesionerAdapter(this, todayBookingObjectList, "3", false);
         historyRecyclerView.setAdapter(sesionerAdapter);
         todayBookingObjectList.clear();
-        getBookingHistory("3");
+        // getBookingHistory("3");
         pending.setTextColor(ContextCompat.getColor(this, R.color.grey));
         completed.setTextColor(ContextCompat.getColor(this, R.color.grey));
         accepted.setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
@@ -405,6 +440,184 @@ public class HistoricalActivity extends GenricActivity {
                 }
             });
             builder.show();
+        }
+    }
+
+    public void editarClick(int adapterPos) {
+        final TodayBookingObject todayBookingObj = todayBookingObjectList.get(adapterPos);
+        category.setText(todayBookingObj.getCategory() + " - ");
+        name.setText(todayBookingObj.getFirstName() + " " + todayBookingObj.getLastName());
+        date.setText(todayBookingObj.getDate());
+        time.setText(getTimeInForamt(todayBookingObj.getBookingStart()) + " - " + getTimeInForamt(todayBookingObj.getBookingEnd()));
+        location.setText("Dirección: " + todayBookingObj.getBookingAddress());
+        numberOfPerson.setText("Número de Personas: " + getNumberOfPerson(todayBookingObj.getBookingFor().trim()));
+        editarPopUpView.setVisibility(View.VISIBLE);
+
+        guardarBtn.setTag(Integer.toString(adapterPos));
+        location.setTag(Integer.toString(adapterPos));
+
+        updatedAddress = todayBookingObj.getBookingAddress();
+        updateBookingType = todayBookingObj.getBookingFor();
+        updateLatitude = todayBookingObj.getBookingLatitude();
+        updatedLongitude = todayBookingObj.getBookingLongitude();
+    }
+
+    @OnClick({R.id.crossBtn})
+    public void hideEditarPopup() {
+        editarPopUpView.setVisibility(View.GONE);
+    }
+
+    public String getTimeInForamt(String time) {
+        String formatterTimeString = "";
+        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm:ss");
+        try {
+            Date formatDate = formatter.parse(time);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(formatDate);
+            formatter = new SimpleDateFormat("hh:mm a", Locale.US);
+            formatterTimeString = formatter.format(formatDate);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return formatterTimeString;
+    }
+
+    public String getNumberOfPerson(String bookingFor) {
+        String noOfPerson = "";
+        switch (bookingFor) {
+            case "1":
+                noOfPerson = "1";
+                break;
+            case "2":
+                noOfPerson = "2";
+                break;
+            case "3":
+                noOfPerson = this.getResources().getString(R.string.group);
+                break;
+            case "4":
+                noOfPerson = "3";
+                break;
+            case "5":
+                noOfPerson = "4";
+                break;
+        }
+        return noOfPerson;
+    }
+
+    @OnClick(R.id.numberOfPerson)
+    public void numberOfPersonClick() {
+        final CharSequence options[] = new CharSequence[]{"1", "2", "3", "4", this.getResources().getString(R.string.group)};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setTitle(getResources().getString(R.string.no_of_person));
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                numberOfPerson.setText("Número de Personas: " + options[which]);
+                String noOfPerson = options[which].toString();
+                switch (noOfPerson) {
+                    case "1":
+                        updateBookingType = "1";
+                        break;
+                    case "2":
+                        updateBookingType = "2";
+                        break;
+                    case "3":
+                        updateBookingType = "4";
+                        break;
+                    case "4":
+                        updateBookingType = "5";
+                        break;
+                    case "Empresarial":
+                        updateBookingType = "3";
+                        break;
+                }
+            }
+        });
+        builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //the user clicked on Cancel
+            }
+        });
+        builder.show();
+    }
+
+    @OnClick(R.id.location)
+    public void locationCLick() {
+        int pos = Integer.parseInt(location.getTag().toString());
+        final TodayBookingObject todayBookingObj = todayBookingObjectList.get(pos);
+        Intent locationUpdateIntent = new Intent(this, LocationUpdateActivity.class);
+        locationUpdateIntent.putExtra("latitude", todayBookingObj.getBookingLatitude());
+        locationUpdateIntent.putExtra("longitude", todayBookingObj.getBookingLongitude());
+        locationUpdateIntent.putExtra("address", todayBookingObj.getBookingAddress());
+        startActivityForResult(locationUpdateIntent, 100);
+    }
+
+    @OnClick(R.id.guardarBtn)
+    public void guardarBtnClick(){
+        int pos = Integer.parseInt(guardarBtn.getTag().toString());
+        updateBookingData(pos);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            if (resultCode == Activity.RESULT_OK) {
+                updatedAddress = data.getStringExtra("address");
+                location.setText("Dirección: " + updatedAddress);
+                updateLatitude = data.getStringExtra("latitude");
+                updatedLongitude = data.getStringExtra("longitude");
+            }
+        }
+    }
+
+    private void updateBookingData(final int adapterPosition) {
+        final TodayBookingObject todayBookingObj = todayBookingObjectList.get(adapterPosition);
+        AppCommon.getInstance(this).setNonTouchableFlags(this);
+        if (AppCommon.getInstance(HistoricalActivity.this).isConnectingToInternet(HistoricalActivity.this)) {
+            progressBar.setVisibility(View.VISIBLE);
+            PretoAppService pretoAppService = ServiceGenerator.createService(PretoAppService.class);
+            call = pretoAppService.updateBookingData(AppCommon.getInstance(this).getUserID(), todayBookingObjectList.get(adapterPosition).getBookingId(),updateBookingType, updateLatitude,updatedLongitude,updatedAddress);
+            call.enqueue(new Callback() {
+                @Override
+                public void onResponse(Call call, Response response) {
+                    AppCommon.getInstance(HistoricalActivity.this).clearNonTouchableFlags(HistoricalActivity.this);
+                    if (response.code() == 200) {
+                        progressBar.setVisibility(View.GONE);
+                        CommonIntResponse commonIntResponse = (CommonIntResponse) response.body();
+                        if (commonIntResponse.getSuccess() == 1) {
+                            editarPopUpView.setVisibility(View.GONE);
+                            if (bookingType.equals("0")) {
+                                getBookingHistory("0");
+                            } else if (bookingType.equals("3")) {
+                                getBookingHistory("3");
+                            }
+                        } else {
+                            AppCommon.getInstance(HistoricalActivity.this).clearNonTouchableFlags(HistoricalActivity.this);
+                            progressBar.setVisibility(View.GONE);
+                            AppCommon.getInstance(HistoricalActivity.this).showDialog(HistoricalActivity.this, commonIntResponse.getError());
+                        }
+                    } else {
+                        AppCommon.getInstance(HistoricalActivity.this).clearNonTouchableFlags(HistoricalActivity.this);
+                        progressBar.setVisibility(View.GONE);
+                        AppCommon.getInstance(HistoricalActivity.this).showDialog(HistoricalActivity.this, getString(R.string.serverError));
+                    }
+                }
+                @Override
+                public void onFailure(Call call, Throwable t) {
+                    AppCommon.getInstance(HistoricalActivity.this).clearNonTouchableFlags(HistoricalActivity.this);
+                    progressBar.setVisibility(View.GONE);
+                    AppCommon.getInstance(HistoricalActivity.this).showDialog(HistoricalActivity.this, getResources().getString(R.string.network_error));
+                }
+            });
+        } else {
+            AppCommon.getInstance(HistoricalActivity.this).clearNonTouchableFlags(HistoricalActivity.this);
+            progressBar.setVisibility(View.GONE);
+            AppCommon.getInstance(this).showDialog(this, getResources().getString(R.string.network_error));
         }
     }
 }

@@ -193,6 +193,10 @@
             android:name="com.tucan.olu.ChangePasswordActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.tucan.olu.LocationUpdateActivity"
+            android:screenOrientation="portrait" />
+
         <service android:name="com.tucan.olu.Firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
