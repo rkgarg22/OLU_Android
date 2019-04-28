@@ -173,4 +173,7 @@
     <string name="switch_card_confirmation">La tarjeta de crédito seleccionada quedará como tu medio de pago principal.</string>
     <string name="card_deleted_successfully">Tarjeta eliminada exitosamente.</string>
     <string name="location_updated_message">Location updated message</string>
+
+    <string name="user_popup">Vas a ingresar tus datos para ser parte de los usuarios de la aplicación. En tus manos tienes la posibilidad de escoger que actividad, cuando y el integrante del OLU Team que prefieras.</string>
+    <string name="trainer_popup">Vas a ingresar tus datos para prestar tus servicios a nuestros usuarios de la aplicacion en las diferentes actividades ofrecidas.</string>
 </resources>
