@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Olu</string>
     <string name="ok">SI</string>
+    <string name="accepto">Acepto</string>
 
     <string name="user_type1_text">ENTRENA</string>
     <string name="user_type1_text2">Usuario</string>

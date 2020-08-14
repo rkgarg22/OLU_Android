@@ -5,9 +5,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -50,6 +56,7 @@ public class HomeActivity extends GenricActivity {
                 AppCommon.getInstance(this).setTokenId(tokenId);
             }
         }
+        covidDialog();
     }
 
     @Override
@@ -220,6 +227,30 @@ public class HomeActivity extends GenricActivity {
             }
         });
     }
+
+    public void covidDialog() {
+        final TextView message = new TextView(this);
+        final SpannableString s =
+                new SpannableString("Ayúdanos a cuidarnos. Conoce nuestro protocolo de bioseguridad. http://oluapp.com/protocolo-bioseguridad-covid-19/");
+        Linkify.addLinks(s, Linkify.WEB_URLS);
+        message.setText(s);
+        message.setTextSize(20);
+        message.setPadding(15,20,15,10);
+        message.setGravity(Gravity.CENTER);
+        message.setMovementMethod(LinkMovementMethod.getInstance());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setView(message);
+        builder.setPositiveButton(this.getResources().getString(R.string.accepto), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+
+            }
+        });
+        builder.show();
+    }
+
 
 
 }

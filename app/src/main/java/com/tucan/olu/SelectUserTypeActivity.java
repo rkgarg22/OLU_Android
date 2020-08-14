@@ -4,7 +4,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -20,6 +26,8 @@ public class SelectUserTypeActivity extends GenricActivity {
         ButterKnife.bind(SelectUserTypeActivity.this);
 
     }
+
+
 
     @OnClick(R.id.userTypeLayout)
     public void userTypeClick(View v) {
